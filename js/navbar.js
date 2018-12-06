@@ -6,6 +6,7 @@ $(document).ready(function(){
 
     $('.nav-search-icon').on('click', function(e){
         $('.nav-items').css('display', 'none')
+        $('.nav-search-icon').css('display', 'none')
         $('.nav-search-bar').fadeIn(800)
         $('.nav-search-bar').css('display', 'flex')
         e.stopPropagation()
@@ -14,6 +15,7 @@ $(document).ready(function(){
 
     $('.close-search').on('click', function(e){
         $('.nav-items').css('display', 'flex')
+        $('.nav-search-icon').css('display', 'flex')
         $('.nav-search-bar').css('display', 'none')
         e.stopPropagation()
     })
@@ -25,8 +27,10 @@ $(document).ready(function(){
         
         if (headerPosition == '0px'){
             $('header').css('top','-196px')
+            $('.nav-bar').toggleClass('nav-shadow')
         }else if (headerPosition == '-196px') {
             $('header').css('top','0')
+            $('.nav-bar').removeClass('nav-shadow')
         }
         
     })
@@ -37,6 +41,7 @@ $(document).ready(function(){
       
         if (headerPosition == '0px'){
             $('header').css('top','-196px')
+            $('.nav-bar').removeClass('nav-shadow')
         }
 
     })

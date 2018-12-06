@@ -18,9 +18,8 @@
             </div>
         </div>
         <div class="nav-bar">
-            <div class="nav-logo"><img src="../images/logo/logo.png" alt="logo miamly"></div>
-            <div class="nav-menu"><img src="../images/icons/hamburger.svg" alt="icon hamburger">MENU</div>
-            <div class="nav-search-icon"><img src="../images/icons/lollipop.svg">Rechercher</div>
+            <div class="nav-logo"><img src="../images/logo/test3.png" alt="logo miamly"></div>
+            <div class="nav-menu"><img src="../images/logo/ham.png" alt="icon hamburger">MENU</div>
             <div class="nav-items">
                 <div>recette</div>
                 <div>plat du jour</div>
@@ -30,6 +29,8 @@
                 <input class="nav-search-input" type="text" placeholder="Que recherchez vous ?">
                 <div class="close-search"><i class="fas fa-times"></i></div>
             </div>
+            <div class="nav-search-icon-toggled"><img src="../images/icons/lollipop.svg"></div>
+            <div class="nav-search-icon">Je recherche...<img src="../images/icons/lollipop.svg"></div>
             <div class="nav-account">compte</div>
         </div>
     </nav>

@@ -1,1 +1,23 @@
 /*CE sera le fichier CSS*/
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,400,700');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+* {
+    box-sizing: border-box;
+    /* border:1px solid red; */
+}
+
+body {
+    background-color: #59C4C5;
+    color: #202020;
+    font-family: 'Noto Sans', sans-serif;
+}
+.container {
+    margin-top: 50px;
+    padding: 50px;
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    background-color: #fcfcfc;
+    box-shadow: 0 0 12px #404040;
+}

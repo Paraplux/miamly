@@ -1,12 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:200,400,700');
-*
-{
-    /* border:1px solid red; */
-}
-body
-{
-      background-color: #eeeeee;
-}
+/*NAVBAR*/
+
 header
 {
     font-family: "Nunito",sans-serif;
@@ -19,7 +12,6 @@ header
     position: fixed;
     transition-duration: 300ms;
     background-color: white;
-    box-shadow: 0 1px 4px #404040;
 }
 .hidden-nav
 {
@@ -29,7 +21,7 @@ header
     justify-content:space-evenly;
     height: 200px;
     width: 100%;
-    background-color: #F7D358;
+    background-color: #FFC33C;
     /* box-shadow: 0 1px black; */
     color: white;
 
@@ -38,6 +30,7 @@ header
 }
 .hidden-nav-column
 {
+    margin: 20px auto;
     width: 33%;
     display: flex;
     flex-direction: column;
@@ -49,11 +42,11 @@ header
 }
 .hidden-nav-column:first-of-type
 {
-    border-right: 1px solid #bbb;
+    border-right: 1px solid rgb(206, 156, 39);
 }
 .hidden-nav-column:last-of-type
 {
-    border-left: 1px solid #bbb;
+    border-left: 1px solid rgb(206, 156, 39);
 }
 .nav-bar
 {
@@ -61,75 +54,102 @@ header
     justify-content:space-between;
     align-items: center;
     height: 60px;
-    /* border-bottom: 1px solid #bbb; */
-    
+    background-color: #fafafa;
+    box-shadow: 0 1px 3px #505050;
 }
+.nav-shadow {
+    box-shadow: 0 0 12px #505050;
+}
+
+/*BOUTON LOGO*/
 .nav-logo
 {
     width: 10%;
+    margin: 0 10px;
+    padding: 0 10px;
+    border-right: 1px solid #808080;
 }
-.nav-search-icon {
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 15%;
-    
-    
+.nav-logo img {
+    width: 100%;
 }
-.nav-search-icon img
-{
-    width: 40px;
-    
-}
-.nav-items
-{
-    display: flex;
-    justify-content: space-evenly;
-    width: 55%;
-    
-}
-.nav-menu
-{
+
+/*BOUTON HAMBURGER*/
+.nav-menu {
     width: 5%;
     text-align: center;
     line-height: 12px;
     font-size: 12px;
     color: #404040;
+    border-right: 1px solid #808080;
 }
-.nav-account
-{
-    width: 15%;
-}
-
-.nav-menu img
-{
+.nav-menu img {
     width: 45px;
-   
-}
-.nav-logo img
-{
-    width: 100%;
-}
-.nav-search-bar{
 
-    width:55%;
+}
+
+/*BOUTON SEARCH*/
+.nav-search-icon,
+.nav-search-icon-toggled {
+    
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+}
+.nav-search-icon-toggled {
+    display: none;
+}
+.nav-search-icon img,
+.nav-search-icon-toggled img
+{
+    width: 40px;
+    
+}
+
+.nav-search-bar {
+    width: 70%;
     display: none;
     justify-content: center;
 }
-.nav-search-input
-{
-    width: 85%;
-    font-size: 30px;
+
+.nav-search-input {
+    padding: 10px;
+    width: 80%;
+    margin: 10px auto;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFC33C50;
 }
-.close-search
-{
+
+.close-search {
+    width:5%;
+    margin: auto;
     color: #404040;
     margin-left: 10px;
     font-size: 25px;
     line-height: 60px;
 }
-.close-search:hover
-{
+
+.close-search:hover {
     cursor: pointer;
+}
+
+/*BOUTON LIENS*/
+
+.nav-items
+{
+    width: 55%;
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+/*BOUTON COMPTE*/
+
+.nav-account
+{
+    width: 15%;
+    text-align: center;
 }
