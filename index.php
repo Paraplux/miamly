@@ -1,3 +1,3 @@
 <?php 
 
-echo 'Bonjour';
+header('Location: ./views/home.php');
