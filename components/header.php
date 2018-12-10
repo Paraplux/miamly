@@ -13,6 +13,6 @@
     <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" href="../css/navbar.css">
 
-    
+    <script src="../js/jquery.js"></script>
 </head>
 <body>

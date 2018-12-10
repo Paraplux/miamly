@@ -9,7 +9,7 @@
             <div class="hidden-nav-column">
                 <div>dromadaire</div>
                 <div>croisade</div>
-                <div>blabla</div>
+                <div><a href="http://www.gammvert.fr/2-1212-plantes-dexterieur/2-5003-gazon/3-3038-tous-nos-gazons/p-31829-gazon-rustique-special-sud-1kg-vilmorin#ref=3038-3" target="_blank">Vegan</a></div>
             </div>
             <div class="hidden-nav-column">
                 <div>Lien</div>
@@ -31,7 +31,6 @@
             </div>
             <div class="nav-search-icon-toggled"><img src="../images/icons/lollipop.svg"></div>
             <div class="nav-search-icon">Je recherche...<img src="../images/icons/lollipop.svg"></div>
-            <div class="nav-account">compte</div>
         </div>
     </nav>
 </header>

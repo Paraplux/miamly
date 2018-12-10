@@ -8,16 +8,22 @@
 }
 
 body {
+    perspective: 800px;
+    margin: 0;
+    padding: 0;
     background-color: #59C4C5;
     color: #202020;
     font-family: 'Noto Sans', sans-serif;
 }
+
 .container {
-    margin-top: 50px;
-    padding: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     width: 80%;
-    height: 100vh;
     margin: auto;
+    padding: 20px;
+    padding-top: 5rem;
     background-color: #fcfcfc;
     box-shadow: 0 0 12px #404040;
 }

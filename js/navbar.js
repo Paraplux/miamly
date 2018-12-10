@@ -26,24 +26,42 @@ $(document).ready(function(){
         console.log(headerPosition)
         
         if (headerPosition == '0px'){
-            $('header').css('top','-196px')
-            $('.nav-bar').toggleClass('nav-shadow')
+            $('header').css({
+                top: '-196px',
+                left: '10%',
+                width: '80%'
+            });
+            $('.nav-bar').removeClass('nav-toggled')
+            $('header').removeClass('header-toggled')
+
         }else if (headerPosition == '-196px') {
-            $('header').css('top','0')
-            $('.nav-bar').removeClass('nav-shadow')
+            $('header').css({
+                top : '0',
+                left: '8%',
+                width : '84%'
+            });
+            $('.nav-bar').toggleClass('nav-toggled')
+            $('header').toggleClass('header-toggled')
         }
         
     })
 
+    
     $(document).on('click',function(){
         var headerPosition = $('header').css('top')
-
-      
+        
+        
         if (headerPosition == '0px'){
+            $('header').css({
+                top: '-196px',
+                left: '10%',
+                width: '80%'
+            });
             $('header').css('top','-196px')
-            $('.nav-bar').removeClass('nav-shadow')
+            $('.nav-bar').removeClass('nav-toggled')
+            $('header').removeClass('header-toggled')
         }
-
+        
     })
 
     

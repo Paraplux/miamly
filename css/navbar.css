@@ -7,11 +7,18 @@ header
     box-sizing: border-box;
 
     top: -196px;
-    left: 0;
-    width: 100%;
+    width: 80%;
+    left: 10%;
     position: fixed;
     transition-duration: 300ms;
-    background-color: white;
+    background-color: none;
+
+    z-index: 100;
+}
+
+.header-toggled {
+    transform: translateY(-15px) rotate3d(1, 0, 0, 10deg);
+    transform-style: preserve-3d;
 }
 .hidden-nav
 {
@@ -22,10 +29,7 @@ header
     height: 200px;
     width: 100%;
     background-color: #FFC33C;
-    /* box-shadow: 0 1px black; */
     color: white;
-
-    /* border-bottom: 1px solid #bbb; */
 
 }
 .hidden-nav-column
@@ -48,6 +52,7 @@ header
 {
     border-left: 1px solid rgb(206, 156, 39);
 }
+
 .nav-bar
 {
     display: flex;
@@ -56,9 +61,15 @@ header
     height: 60px;
     background-color: #fafafa;
     box-shadow: 0 1px 3px #505050;
+    border-radius: 0 0 20px 20px;
+    
 }
-.nav-shadow {
+.nav-toggled {
     box-shadow: 0 0 12px #505050;
+    transform: translateY(0px) rotate3d(1, 0, 0, -10deg);
+    transform-origin: center bottom;
+    margin:auto;
+    filter: blur(0);
 }
 
 /*BOUTON LOGO*/
@@ -139,7 +150,7 @@ header
 
 .nav-items
 {
-    width: 55%;
+    width: 70%;
     margin: 0 10px;
     display: flex;
     justify-content: space-evenly;
@@ -148,8 +159,3 @@ header
 
 /*BOUTON COMPTE*/
 
-.nav-account
-{
-    width: 15%;
-    text-align: center;
-}

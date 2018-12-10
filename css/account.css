@@ -1,0 +1,15 @@
+.account-nav {
+    position: fixed;
+    width: 20%;
+    bottom: -160px;
+    right: 5%;
+    padding: 10px;
+    height: 200px;
+    background-color:#FFC33C;
+    border-radius: 20px 20px 0 0 ;
+}
+
+.account-title {
+    height: 30px;
+    border-bottom: 1px solid rgb(206, 156, 39);
+}
