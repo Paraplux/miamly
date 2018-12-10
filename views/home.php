@@ -24,7 +24,7 @@ include '../components/navbar.php';
                 <h2>Fondant au chocolat</h2>
             </div>
             <div class="card-text">
-                <p>Surprenez vos convives avec cette délicieuse recette de croisé.</p>
+                <p>Surprenez vos convives avec cette délicieuse recette de croisé [...]</p>
             </div>
         </div>
         <div class="card-footer">
@@ -55,7 +55,7 @@ include '../components/navbar.php';
                 <h2>Fondant au chocolat</h2>
             </div>
             <div class="card-text">
-                <p>Surprenez vos convives avec cette délicieuse recette de croisé.</p>
+                <p>Surprenez vos convives avec cette délicieuse recette de croisé [...]</p>
             </div>
         </div>
         <div class="card-footer">
@@ -86,7 +86,7 @@ include '../components/navbar.php';
                 <h2>Fondant au chocolat</h2>
             </div>
             <div class="card-text">
-                <p>Surprenez vos convives avec cette délicieuse recette de croisé.</p>
+                <p>Surprenez vos convives avec cette délicieuse recette de croisé [...]</p>
             </div>
         </div>
         <div class="card-footer">
@@ -117,7 +117,7 @@ include '../components/navbar.php';
                 <h2>Fondant au chocolat</h2>
             </div>
             <div class="card-text">
-                <p>Surprenez vos convives avec cette délicieuse recette de croisé.</p>
+                <p>Surprenez vos convives avec cette délicieuse recette de croisé [...]</p>
             </div>
         </div>
         <div class="card-footer">
@@ -148,7 +148,7 @@ include '../components/navbar.php';
                 <h2>Fondant au chocolat</h2>
             </div>
             <div class="card-text">
-                <p>Surprenez vos convives avec cette délicieuse recette de croisé.</p>
+                <p>Surprenez vos convives avec cette délicieuse recette de croisé [...]</p>
             </div>
         </div>
         <div class="card-footer">
