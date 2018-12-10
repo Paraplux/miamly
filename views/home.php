@@ -15,7 +15,8 @@ foreach($recettes as $recette ):
     } else if ($recette["r_type"] == "Plat"){
         $color="red";
     } else if ($recette["r_type"] == "Entrée"){
-        $color="yellow";}
+        $color="yellow";
+    }
  ?>
 
     <div class="card" id="<?=$color  ?>">
