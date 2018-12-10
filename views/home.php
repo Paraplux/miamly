@@ -1,7 +1,6 @@
 <?php 
 include '../components/header.php';
 include '../components/navbar.php';
-include '../components/account.php';
 ?>
 <link rel="stylesheet" href="../css/cards.css">
 <br><br>

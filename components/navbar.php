@@ -1,20 +1,21 @@
+<?php include "../components/account.php" ?>
 <header>
     <nav>
         <div class="hidden-nav">
             <div class="hidden-nav-column">
-                <div>deja fait</div>
-                <div>bro</div>
-                <div>couscous</div>
+                <div>Top recettes</div>
+                <div>Tout pour mon bidon</div>
+                <div>Recette au hasard</div>
             </div>
             <div class="hidden-nav-column">
-                <div>dromadaire</div>
-                <div>croisade</div>
-                <div><a href="http://www.gammvert.fr/2-1212-plantes-dexterieur/2-5003-gazon/3-3038-tous-nos-gazons/p-31829-gazon-rustique-special-sud-1kg-vilmorin#ref=3038-3" target="_blank">Vegan</a></div>
+                <div>Mes selections</div>
+                <div>Manger sur le pouce</div>
+                <div>Les recettes communautaire</div>
             </div>
             <div class="hidden-nav-column">
-                <div>Lien</div>
-                <div>jerusalem</div>
-                <div>Youtube</div>
+                <div>A partager</div>
+                <div>Les outils</div>
+                <div><a href="http://www.gammvert.fr/2-1212-plantes-dexterieur/2-5003-gazon/3-3038-tous-nos-gazons/p-31829-gazon-rustique-special-sud-1kg-vilmorin#ref=3038-3" target="_blank">Vegge t'as rien</a></div>
             </div>
         </div>
         <div class="nav-bar">

@@ -32,7 +32,6 @@ $(document).ready(function(){
                 width: '80%'
             });
             $('.nav-bar').removeClass('nav-toggled')
-            $('header').removeClass('header-toggled')
 
         }else if (headerPosition == '-196px') {
             $('header').css({
@@ -41,7 +40,6 @@ $(document).ready(function(){
                 width : '84%'
             });
             $('.nav-bar').toggleClass('nav-toggled')
-            $('header').toggleClass('header-toggled')
         }
         
     })

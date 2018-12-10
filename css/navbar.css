@@ -15,11 +15,6 @@ header
 
     z-index: 100;
 }
-
-.header-toggled {
-    transform: translateY(-15px) rotate3d(1, 0, 0, 10deg);
-    transform-style: preserve-3d;
-}
 .hidden-nav
 {
     
@@ -63,13 +58,6 @@ header
     box-shadow: 0 1px 3px #505050;
     border-radius: 0 0 20px 20px;
     
-}
-.nav-toggled {
-    box-shadow: 0 0 12px #505050;
-    transform: translateY(0px) rotate3d(1, 0, 0, -10deg);
-    transform-origin: center bottom;
-    margin:auto;
-    filter: blur(0);
 }
 
 /*BOUTON LOGO*/
