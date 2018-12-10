@@ -1,7 +1,8 @@
 <?php
-include '../components/db.php';
+include("../components/db.php");
+$req = $pdo->prepare('SELECT * FROM mly_recettes');
+$req->execute();
+$recettes =  $req->fetchAll();
+$req->closeCursor();
 
-$requete = $pdo->prepare('SELECT * FROM mly_recettes');
-$requete->execute();
-
-$recettes = $requete->fetchAll();
+?>

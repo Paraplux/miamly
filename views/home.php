@@ -7,18 +7,18 @@ include '../controllers/controller-recettes.php';
 <br><br>
 <div class="container">
 
-    <?php foreach($recettes as $recette):
+<?php
+foreach($recettes as $recette ):
 
-    if($recette['r_type'] == 'Entrée') {
-        $typeColor = 'blue';
-    } else if($recette['r_type'] == 'Plat') {
-        $typeColor = 'red';
-    } else if($recette['r_type'] == 'Dessert') {
-        $typeColor = 'yellow';
-    }
+    if($recette["r_type"] == "Dessert"){
+        $color="blue";
+    } else if ($recette["r_type"] == "Plat"){
+        $color="red";
+    } else if ($recette["r_type"] == "Entrée"){
+        $color="yellow";}
+ ?>
 
-    ?>
-    <div class="card" id="<?= $typeColor ?>">
+    <div class="card" id="<?=$color  ?>">
         <div class="card-thumb">
             <img src="../hw_ressources/test.jpg" alt="test">
             <div class="card-thumb-fav">
@@ -31,28 +31,28 @@ include '../controllers/controller-recettes.php';
         </div>
         <div class="card-content">
             <div class="card-category">
-                <h3><?= $recette['r_type'] ?></h3>
+                <h3><?= $recette["r_type"] ?></h3>
             </div>
             <div class="card-title">
-                <h2><?= $recette['r_nom'] ?></h2>
+                <h2><?= $recette["r_nom"] ?></h2>
             </div>
             <div class="card-text">
-                <p><?= $recette['r_content'] ?> [...]</p>
+                <p><?= $recette["r_content"] ?>[...]</p>
             </div>
         </div>
         <div class="card-footer">
             <div class="card-footer-date">
-                <p><?= $recette['r_date'] ?></p>
+                <p><?= $recette["r_date"] ?></p>
             </div>
             <div class="card-footer-user">
-                <p> by <strong><?= $recette['r_createur'] ?></strong></p>
+                <p> by <strong><?= $recette["r_createur"] ?></strong></p>
             </div>
-            <a href="recette.php?id=<?= $recette['r_id'] ?>">Go</a>
+            <a href="recette.php?id=Robert">Go</a>
         </div>
     </div>
-
-    <?php endforeach; ?>
-
+<?php
+endforeach;
+?>
 </div>
 
 <?php 

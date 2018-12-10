@@ -15,7 +15,7 @@
             <div class="hidden-nav-column">
                 <div>A partager</div>
                 <div>Les outils</div>
-                <div><a href="http://www.gammvert.fr/2-1212-plantes-dexterieur/2-5003-gazon/3-3038-tous-nos-gazons/p-31829-gazon-rustique-special-sud-1kg-vilmorin#ref=3038-3" target="_blank">Vegge t'as rien</a></div>
+                <div><a href="https://www.neonmag.fr/content/uploads/2016/10/CHIEN3.gif" target="_blank">Vegge t'as rien</a></div>
             </div>
         </div>
         <div class="nav-bar">
