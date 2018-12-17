@@ -4,12 +4,13 @@ include '../components/navbar.php';
 ?>
 
 <link rel="stylesheet" href="../css/sign.css">
+<link rel="stylesheet" href="../css/form.css">
 
 <div class="container">
     <section class="sign-page">
 
 
-        <form class="sign-form" method="POST" action="../actions/action-sign.php">
+        <form class="mly-form" method="POST" action="../actions/action-sign.php">
             <input name="email" type="email" placeholder="Votre mail"><br>
             <input name="pseudo" type="text" placeholder="Pseudo"><br>
             <input name="password" type="password" placeholder="Mot de passe"><br>
@@ -17,11 +18,12 @@ include '../components/navbar.php';
             <input type="submit"><br>
         </form>
 
-        
+
         <article class="sign-content">
-            <h1>Blabla</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum odio ex reiciendis, culpa quos voluptate, expedita, corporis eveniet quia atque placeat necessitatibus tempore architecto officia nulla laudantium iste unde! Aliquid.
-            Ipsum totam doloribus, facilis vel sunt aut inventore officiis id a sint aliquam vero non numquam consequuntur optio esse voluptates rem sit. Maiores sit quis velit pariatur in? Quasi, quae.</p>
+            <h1>Inscrivez vous!</h1>
+            <p>Vous inscrire sur Miamly c'est l'assurance de ne rater aucunes actualités savoureuses et aucunes recettes.</p>
+            <p>Le compte Miamly permet de converver vos recettes préférées, ainsi que suivre celles de vos amis, n'attendez pas, rejoingnez nous, et commencez dès maintenant à créer vos propres recettes grasses et gouteuses!</p>
+            <p>Vos informations ne seront jamais transmises.</p>
         </article>
     </section>
 </div>
