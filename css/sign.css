@@ -1,0 +1,38 @@
+.sign-page {
+    width: 80%;
+    height: 500px;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0 10px #20202030;
+    border-radius: 15px;
+}
+
+.sign-form, 
+.sign-content {
+    width: 50%;
+    text-align: center;
+}
+
+.sign-form input {
+    width: 70%;
+    height: 35px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+
+    border-radius: 8px;
+    /* border: 1px solid #404040; */
+    border: 1px solid #ffc33c;
+}
+
+.sign-form input:focus {
+    border: 2px solid #ffc33c;
+    outline: none;
+}
+
+.sign-form input[type='submit'] {
+    background-color: #ffc33c;
+}
