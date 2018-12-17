@@ -1,16 +1,14 @@
 <?php
 include("../components/db.php");
-$req = $pdo->prepare('SELECT * FROM mly_recettes');
+
+$sql = 'SELECT *
+        FROM mly_recettes
+        LEFT JOIN mly_photos ON mly_recettes.r_id = mly_photos.p_recette_id';
+        
+$req = $pdo->prepare($sql);
 $req->execute();
-$recettes =  $req->fetchAll();
-$req->closeCursor();
 
+$recettes = $req->fetchAll();
 
-$req = $pdo->prepare('SELECT * FROM mly_photos');
-$req->execute();
-foreach($recettes as $recette) {
-    $recette['photos'] = $req->fetchAll();
-
-}
 $req->closeCursor();
 ?>

@@ -1,5 +1,9 @@
 <?php 
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 if (isset($_POST)) {
 
     if (empty($_POST['login'])) {
@@ -17,18 +21,19 @@ if (isset($_POST)) {
         ));
         $utilisateur = $req->fetch();
         if($utilisateur == null){
-            $_SESSION['toast']['erreur']['password'] = "Logs incorrect";
-            echo 'Mauvais logs';
+            $_SESSION['toast']['erreur']['password'] = "Vos informations de connexion sont incorrects";
+            header('Location: ../views/login.php');
         } else if (password_verify($_POST['password'], $utilisateur['u_password'])) {
-            echo 'Vous êtes connecté <br>';
-            echo 'Bonjour '.$utilisateur['u_pseudo'];
             $_SESSION['utilisateur'] = $utilisateur;
+            $_SESSION['toast']['success']['sign'] = "Vous êtes connecté";
+            header('Location: ../views/account.php');
         } else {
-            $_SESSION['toast']['erreur']['password'] = "Logs incorrect";
-            echo 'Mauvais logs';
+            $_SESSION['toast']['erreur']['password'] = "Vos informations de connexion sont incorrects";
+            header('Location: ../views/login.php');
         }
     } else {
-        echo 'Problème de champs';
+        $_SESSION['toast']['erreur']['password'] = "Vos champs de connexion sont mal remplis";
+        header('Location: ../views/login.php');
     }
     exit();
 }

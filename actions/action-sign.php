@@ -1,6 +1,10 @@
 <?php 
 
-if(isset($_POST)) { //tu test si le form est submit
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if(isset($_POST)) { 
 
     if(empty($_POST['email'])) { //erreur
         $_SESSION['toast']['erreur']['email'] = "Le champ mail est vide";
@@ -21,7 +25,9 @@ if(isset($_POST)) { //tu test si le form est submit
             ':pseudo' => $_POST['pseudo'],
             ':password' => $password,
         ));
-        header('Location: ../views/home.php');
+        $_SESSION['utilisateur'] = $utilisateur;
+        $_SESSION['toast']['success']['sign'] = "Vous êtes inscrit et connecté";
+        header('Location: ../views/account.php');
         exit();
     }
 }

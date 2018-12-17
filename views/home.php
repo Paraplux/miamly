@@ -1,4 +1,9 @@
-<?php 
+<?php
+
+if (session_status() == PHP_SESSION_NONE) {
+session_start();
+}
+
 include '../components/header.php';
 include '../components/navbar.php';
 include '../controllers/controller-recettes.php';
@@ -21,7 +26,7 @@ foreach($recettes as $recette ):
 
     <div class="card" id="<?=$color  ?>">
         <div class="card-thumb">
-            <img src="../hw_ressources/test.jpg" alt="test">
+            <img src="<?= $recette["p_link"] ?>" alt="test">
             <div class="card-thumb-fav">
                 <label class="fav-checkbox">
                     <input type="hidden" name="fax" value="False" />
@@ -48,7 +53,7 @@ foreach($recettes as $recette ):
             <div class="card-footer-user">
                 <p> by <strong><?= $recette["r_createur"] ?></strong></p>
             </div>
-            <a href="recette.php?id=Robert">Go</a>
+            <a href="recette?id=Robert">Go</a>
         </div>
     </div>
 <?php

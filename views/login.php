@@ -15,7 +15,7 @@ include '../components/navbar.php';
             <input name="password" type="password" placeholder="Mot de passe">
             <input type="submit">
             <br>
-            <a class="create-account" href="./sign.php">Je n'ai pas encore de compte</a>
+            <a class="create-account" href="./sign">Je n'ai pas encore de compte</a>
         </form>
         
 

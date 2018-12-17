@@ -1,4 +1,3 @@
-<?php include "../components/account.php" ?>
 <header>
     <nav>
         <div class="hidden-nav">
