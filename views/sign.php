@@ -7,6 +7,8 @@ include '../components/navbar.php';
 
 <div class="container">
     <section class="sign-page">
+
+
         <form class="sign-form" method="POST" action="../actions/action-sign.php">
             <input name="email" type="email" placeholder="Votre mail"><br>
             <input name="pseudo" type="text" placeholder="Pseudo"><br>
@@ -14,6 +16,8 @@ include '../components/navbar.php';
             <input name="password_confirmation" type="password" placeholder="Confirmation de mot de passe"><br>
             <input type="submit"><br>
         </form>
+
+        
         <article class="sign-content">
             <h1>Blabla</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum odio ex reiciendis, culpa quos voluptate, expedita, corporis eveniet quia atque placeat necessitatibus tempore architecto officia nulla laudantium iste unde! Aliquid.

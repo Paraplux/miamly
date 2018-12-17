@@ -17,12 +17,14 @@ if (isset($_POST)) {
         ));
         $utilisateur = $req->fetch();
         if($utilisateur == null){
+            $_SESSION['toast']['erreur']['password'] = "Logs incorrect";
             echo 'Mauvais logs';
         } else if (password_verify($_POST['password'], $utilisateur['u_password'])) {
             echo 'Vous êtes connecté <br>';
             echo 'Bonjour '.$utilisateur['u_pseudo'];
             $_SESSION['utilisateur'] = $utilisateur;
         } else {
+            $_SESSION['toast']['erreur']['password'] = "Logs incorrect";
             echo 'Mauvais logs';
         }
     } else {

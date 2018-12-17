@@ -1,14 +1,14 @@
 <?php 
 
-if(isset($_POST)) {
+if(isset($_POST)) { //tu test si le form est submit
 
-    if(empty($_POST['email'])) {
+    if(empty($_POST['email'])) { //erreur
         $_SESSION['toast']['erreur']['email'] = "Le champ mail est vide";
     }
-    if (empty($_POST['pseudo'])) {
+    if (empty($_POST['pseudo'])) { //erreur
         $_SESSION['toast']['erreur']['pseudo'] = "Le champ pseudo est vide";
     }
-    if (empty($_POST['password']) || $_POST['password'] != $_POST['password_confirmation']) {
+    if (empty($_POST['password']) || $_POST['password'] != $_POST['password_confirmation']) { //erreur
         $_SESSION['toast']['erreur']['password'] = "Le champ mot de passe est vide ou non valide!";
     }
 
