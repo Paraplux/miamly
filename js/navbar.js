@@ -4,7 +4,7 @@ $(document).ready(function(){
         e.stopPropagation()
     })
 
-    $('.nav-search-icon').on('click', function(e){
+    $('.fa-search').on('click', function (e) {
         $('.nav-items').css('display', 'none')
         $('.nav-search-icon').css('display', 'none')
         $('.nav-search-bar').fadeIn(800)
@@ -22,43 +22,32 @@ $(document).ready(function(){
 
     $('.nav-menu').on('click',function(){
         
-        var headerPosition = $('header').css('top')
+        var headerPosition = $('header').css('transform')
         console.log(headerPosition)
         
-        if (headerPosition == '0px'){
-            $('header').css({
-                top: '-196px',
-                left: '10%',
-                width: '80%'
+        if (headerPosition == 'matrix(1, 0, 0, 1, 0, 0)') {
+            $('header, .container').css({
+                'transform': 'translateY(-200px)'
             });
-            $('.nav-bar').removeClass('nav-toggled')
 
-        }else if (headerPosition == '-196px') {
-            $('header').css({
-                top : '0',
-                left: '8%',
-                width : '84%'
+        } else if (headerPosition == 'matrix(1, 0, 0, 1, 0, -200)') {
+            $('header, .container').css({
+                'transform': 'translateY(0px)'
             });
-            $('.nav-bar').toggleClass('nav-toggled')
         }
         
     })
 
     
     $(document).on('click',function(){
-        var headerPosition = $('header').css('top')
+        var headerPosition = $('header').css('transform')
         
         
-        if (headerPosition == '0px'){
-            $('header').css({
-                top: '-196px',
-                left: '10%',
-                width: '80%'
+        if (headerPosition == 'matrix(1, 0, 0, 1, 0, 0)') {
+            $('header, .container').css({
+                'transform': 'translateY(-200px)'
             });
-            $('header').css('top','-196px')
-            $('.nav-bar').removeClass('nav-toggled')
-            $('header').removeClass('header-toggled')
-        }
+        } 
         
     })
 

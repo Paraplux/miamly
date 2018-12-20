@@ -1,23 +1,28 @@
-/*NAVBAR*/
+/*-----LESS VARIABLES-----*/
+@bg : #FAFAFA;
+@dark: #404040;
+@yellow : #FFC33C;
 
-header
-{
+/*-----HEADER NAV-----*/
+header {
+    position: absolute;
     font-family: "Nunito",sans-serif;
     text-transform: uppercase;
     box-sizing: border-box;
 
-    top: -196px;
-    width: 80%;
-    left: 10%;
-    position: fixed;
+    width: 100%;
     transition-duration: 300ms;
     background-color: none;
-
-    z-index: 100;
+    transform: translateY(-200px);
+    z-index: 10000;
 }
-.hidden-nav
-{
-    
+
+header a {
+    text-decoration: none;
+    color: @dark;
+}
+
+.hidden-nav {
 
     display: flex;
     justify-content:space-evenly;
@@ -25,11 +30,8 @@ header
     width: 100%;
     background-color: #FFC33C;
     color: white;
-    
-
 }
-.hidden-nav-column
-{
+.hidden-nav-column {
     margin: 20px auto;
     width: 33%;
     display: flex;
@@ -40,37 +42,37 @@ header
     text-align: center;    
 
 }
-.hidden-nav-column:first-of-type
-{
+.hidden-nav-column:first-of-type {
     border-right: 1px solid rgb(206, 156, 39);
 }
-.hidden-nav-column:last-of-type
-{
+.hidden-nav-column:last-of-type {
     border-left: 1px solid rgb(206, 156, 39);
 }
 
-.nav-bar
-{
+
+/*-----NAVBAR-----*/
+
+.nav-bar {
     display: flex;
     justify-content:space-between;
-    align-items: center;
     height: 60px;
+    line-height: 60px;
     background-color: #fafafa;
-    box-shadow: 0 1px 3px #505050;
-    border-radius: 0 0 20px 20px;
-    
+    box-shadow: 0 1px 3px @dark;
+    z-index: 1000;
 }
 
 /*BOUTON LOGO*/
-.nav-logo
-{
-    width: 10%;
+.nav-logo {
+    width: 20%;
     margin: 0 10px;
     padding: 0 10px;
-    border-right: 1px solid #808080;
+    text-align: center;
 }
 .nav-logo img {
-    width: 100%;
+    width: 150px;
+    height: 60px;
+    padding: 5px 15px
 }
 
 /*BOUTON HAMBURGER*/
@@ -79,35 +81,40 @@ header
     text-align: center;
     line-height: 12px;
     font-size: 12px;
-    color: #404040;
-    border-right: 1px solid #808080;
+    color: @dark;
+    /* border-right: 1px solid #808080;  */
 }
 .nav-menu img {
-    width: 45px;
+    width: 70px;
+    height: 60px;
+    padding: 5px 5px
+}
 
+/*CENTER NAV*/
+
+.center-nav {
+    width: 60%;
+}
+
+/*RIGHT BUTTONS*/
+
+.nav-right-icons {
+    width: 15%;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-right-icons .fas {
+    padding: 0 15px;
+    margin-right: 10px;
+    font-size: 2rem;
+    line-height: 60px;
 }
 
 /*BOUTON SEARCH*/
-.nav-search-icon,
-.nav-search-icon-toggled {
-    
-    width: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; 
-}
-.nav-search-icon-toggled {
-    display: none;
-}
-.nav-search-icon img,
-.nav-search-icon-toggled img
-{
-    width: 40px;
-    
-}
 
 .nav-search-bar {
-    width: 70%;
     display: none;
     justify-content: center;
 }
@@ -125,7 +132,6 @@ header
 .close-search {
     width:5%;
     margin: auto;
-    color: #404040;
     margin-left: 10px;
     font-size: 25px;
     line-height: 60px;
@@ -137,13 +143,24 @@ header
 
 /*BOUTON LIENS*/
 
-.nav-items
-{
-    width: 70%;
+.nav-items {
     margin: 0 10px;
     display: flex;
     justify-content: space-evenly;
-    
+
+    font-size: 1.2rem;
+}
+
+.nav-items a {
+    padding: 0 30px;
+}
+
+.nav-items a:hover,
+.nav-logo img:hover, 
+.nav-menu img:hover,
+.nav-right-icons .fas:hover {
+    cursor: pointer;
+    box-shadow: 0 0 2px #888 inset;
 }
 
 /*BOUTON COMPTE*/

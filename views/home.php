@@ -9,7 +9,6 @@ include '../components/navbar.php';
 include '../controllers/controller-recettes.php';
 ?>
 <link rel="stylesheet" href="../css/cards.css">
-<br><br>
 <div class="container">
 
 <?php

@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple|Indie+Flower|Reenie+Beanie');
+
+/*DISPOSITION DE LA PAGE*/
+
+.container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.side-content {
+    position: sticky;
+    top:15%;
+    width: 40%;
+    height: auto;
+    margin-top: 5rem;
+
+    font-family: 'Reenie Beanie';
+    font-size: 1.8rem;
+    text-align: center;
+    color: #303030;
+    /* border-left: 1px solid #202020; */
+    background-color: #F5ED9F;
+    border-top: 35px solid #F7E784;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0),
+    0 5px 10px rgba(0, 0, 0, 0.50);
+    transform: rotate(-3deg);
+}
+
+.main-content {
+    width: 60%;
+    padding: 2%;
+}
+
+/*MAIN CONTENT*/
+.carousel-item {
+    width: 80%;
+    margin: auto 10%;
+}
+
+.main-content-auteur {
+    display: flex;
+    flex-wrap: wrap;
+}
+.main-content-avatar {
+    width: 75px;
+    height: 75px;
+    border : 3px solid #ffc33c;
+    border-radius: 50px;
+}
+.main-content-pseudo {
+    margin-left: 10%;
+    line-height: 75px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+
+    border: 1px solid #ffc33c;
+    border-radius: 8px;
+}
+
+.comment-form textarea:focus {
+    border: 2px solid #ffc33c;
+    outline: none;
+}
+
+.comment-form input {
+    height: 35px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    border: 1px solid #ffc33c;
+    border-radius: 8px;
+    background-color: #ffc33c;
+}
+/*SIDE CONTENT*/
