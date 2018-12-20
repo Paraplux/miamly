@@ -1,46 +1,49 @@
 /*-----LESS VARIABLES-----*/
-@bg : #FAFAFA;
+@light : #FAFAFA;
 @dark: #404040;
 @yellow : #FFC33C;
 
-/*-----HEADER NAV-----*/
+/*-----STYLE GLOBAL DE LA NAV BAR-----*/
+
 header {
-    position: absolute;
+    position: fixed;
+    width: 100%;
+
     font-family: "Nunito",sans-serif;
     text-transform: uppercase;
-    box-sizing: border-box;
 
-    width: 100%;
     transition-duration: 300ms;
-    background-color: none;
     transform: translateY(-200px);
+
     z-index: 10000;
 }
 
 header a {
     text-decoration: none;
-    color: @dark;
+    color: @light;
 }
 
+/*STYLE DE LA PARTIE CACHEE*/
+
 .hidden-nav {
+    width: 100%;
+    height: 200px;
 
     display: flex;
     justify-content:space-evenly;
-    height: 200px;
-    width: 100%;
+
     background-color: #FFC33C;
-    color: white;
 }
 .hidden-nav-column {
     margin: 20px auto;
     width: 33%;
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-content: center;
 
-    text-align: center;    
-
+    text-align: center;
 }
 .hidden-nav-column:first-of-type {
     border-right: 1px solid rgb(206, 156, 39);
@@ -50,39 +53,46 @@ header a {
 }
 
 
-/*-----NAVBAR-----*/
+/*-----STYLE DE LA PARTIE VISIBLE-----*/
 
 .nav-bar {
+    height: 60px;
+
     display: flex;
     justify-content:space-between;
-    height: 60px;
+
     line-height: 60px;
-    background-color: #fafafa;
+
+    background-color: @light;
     box-shadow: 0 1px 3px @dark;
+
     z-index: 1000;
 }
 
-/*BOUTON LOGO*/
+    /*BOUTON LOGO*/
+
 .nav-logo {
     width: 20%;
     margin: 0 10px;
     padding: 0 10px;
+
     text-align: center;
 }
 .nav-logo img {
     width: 150px;
     height: 60px;
-    padding: 5px 15px
+    padding: 5px 15px;
 }
 
-/*BOUTON HAMBURGER*/
+    /*BOUTON HAMBURGER*/
+
 .nav-menu {
     width: 5%;
+
+    color: @dark;
+    font-size: 12px;
     text-align: center;
     line-height: 12px;
-    font-size: 12px;
-    color: @dark;
-    /* border-right: 1px solid #808080;  */
 }
 .nav-menu img {
     width: 70px;
@@ -90,29 +100,47 @@ header a {
     padding: 5px 5px
 }
 
-/*CENTER NAV*/
+    /*CENTER NAV*/
 
 .center-nav {
     width: 60%;
 }
 
-/*RIGHT BUTTONS*/
+    /*RIGHT BUTTONS*/
 
 .nav-right-icons {
     width: 15%;
     margin-right: 20px;
+
     display: flex;
     justify-content: space-evenly;
 }
 
 .nav-right-icons .fas {
-    padding: 0 15px;
     margin-right: 10px;
+    padding: 0 15px;
+
     font-size: 2rem;
     line-height: 60px;
 }
 
-/*BOUTON SEARCH*/
+
+/*LIENS CENTRAUX*/
+
+.nav-items {
+    margin: 0 10px;
+
+    display: flex;
+    justify-content: space-evenly;
+    
+    font-size: 1.2rem;
+}
+
+.nav-items a {
+    padding: 0 30px;
+}
+
+    /*BOUTON SEARCH*/
 
 .nav-search-bar {
     display: none;
@@ -120,10 +148,12 @@ header a {
 }
 
 .nav-search-input {
-    padding: 10px;
     width: 80%;
     margin: 10px auto;
+    padding: 10px;
+
     font-size: 20px;
+
     border-radius: 10px;
     border: none;
     background-color: #FFC33C50;
@@ -133,6 +163,7 @@ header a {
     width:5%;
     margin: auto;
     margin-left: 10px;
+    
     font-size: 25px;
     line-height: 60px;
 }
@@ -141,20 +172,7 @@ header a {
     cursor: pointer;
 }
 
-/*BOUTON LIENS*/
-
-.nav-items {
-    margin: 0 10px;
-    display: flex;
-    justify-content: space-evenly;
-
-    font-size: 1.2rem;
-}
-
-.nav-items a {
-    padding: 0 30px;
-}
-
+    /*GESTION DES HOVER*/
 .nav-items a:hover,
 .nav-logo img:hover, 
 .nav-menu img:hover,
@@ -162,6 +180,4 @@ header a {
     cursor: pointer;
     box-shadow: 0 0 2px #888 inset;
 }
-
-/*BOUTON COMPTE*/
 
