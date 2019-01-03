@@ -8,7 +8,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 include '../components/header.php';
 include '../components/navbar.php';
-include '../controllers/controller-recettes.php';
+// include '../controllers/controller-recettes.php';
 ?>
 <link rel="stylesheet" href="../css/recette.css">
 <div class="container">

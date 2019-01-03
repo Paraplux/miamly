@@ -11,10 +11,9 @@
     <script src="../js/jquery.js"></script>
     
     <!-- PERSONNAL CSS -->
-    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet/less" href="../css/app.less">
     <link rel="stylesheet/less" href="../css/navbar.less">
 
-    <!-- LESS SCRIPT -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+    
 </head>
 <body>

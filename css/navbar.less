@@ -1,16 +1,28 @@
+
+
 /*-----LESS VARIABLES-----*/
 @light : #FAFAFA;
 @dark: #404040;
-@yellow : #FFC33C;
+@blue-1 : #00C8F8;
+@blue-2 : #59C4C5;
+@yellow-1 : #FFC33C;
+@yellow-2 : #FBE2B4;
+@red : #FF4C65;
+
+@hidden-bg : #00C8F8;
+@hidden-font : #fff;
+@hidden-contour : rgb(0, 141, 177);
 
 /*-----STYLE GLOBAL DE LA NAV BAR-----*/
-
+.header-fix {
+    height: 50px;
+}
 header {
     position: fixed;
     width: 100%;
 
-    font-family: "Nunito",sans-serif;
-    text-transform: uppercase;
+    font-family: "Cabin",sans-serif;
+    // text-transform: uppercase;
 
     transition-duration: 300ms;
     transform: translateY(-200px);
@@ -32,7 +44,9 @@ header a {
     display: flex;
     justify-content:space-evenly;
 
-    background-color: #FFC33C;
+    background-color: @hidden-bg;
+    background-image: url(../images/fili.png);
+    filter: contrast(0.9);
 }
 .hidden-nav-column {
     margin: 20px auto;
@@ -45,6 +59,12 @@ header a {
 
     text-align: center;
 }
+
+.hidden-nav a {
+    text-shadow: 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour, 0px 0px 6px @hidden-contour;
+    color: @hidden-font;
+    font-weight: bold;
+}
 .hidden-nav-column:first-of-type {
     border-right: 1px solid rgb(206, 156, 39);
 }
@@ -56,15 +76,15 @@ header a {
 /*-----STYLE DE LA PARTIE VISIBLE-----*/
 
 .nav-bar {
-    height: 60px;
+    height: 50px;
 
     display: flex;
     justify-content:space-between;
 
-    line-height: 60px;
+    line-height: 50px;
 
     background-color: @light;
-    box-shadow: 0 1px 3px @dark;
+    box-shadow: 0 0px 10px @dark;
 
     z-index: 1000;
 }
@@ -79,8 +99,8 @@ header a {
     text-align: center;
 }
 .nav-logo img {
-    width: 150px;
-    height: 60px;
+    width: 140px;
+    height: 50px;
     padding: 5px 15px;
 }
 
@@ -95,8 +115,8 @@ header a {
     line-height: 12px;
 }
 .nav-menu img {
-    width: 70px;
-    height: 60px;
+    width: 60px;
+    height: 50px;
     padding: 5px 5px
 }
 
@@ -120,8 +140,9 @@ header a {
     margin-right: 10px;
     padding: 0 15px;
 
-    font-size: 2rem;
-    line-height: 60px;
+    font-size: 1.8rem;
+    line-height: 50px;
+    color: @yellow-1;
 }
 
 
@@ -133,10 +154,11 @@ header a {
     display: flex;
     justify-content: space-evenly;
     
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .nav-items a {
+    color: @dark;
     padding: 0 30px;
 }
 
@@ -150,13 +172,22 @@ header a {
 .nav-search-input {
     width: 80%;
     margin: 10px auto;
-    padding: 10px;
 
-    font-size: 20px;
-
+    display: flex;
+    align-items: center;
     border-radius: 10px;
-    border: none;
     background-color: #FFC33C50;
+    
+    input {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        font-size: 20px;
+
+        border: none;
+        background-color: #00000000;
+    }
 }
 
 .close-search {
@@ -178,6 +209,7 @@ header a {
 .nav-menu img:hover,
 .nav-right-icons .fas:hover {
     cursor: pointer;
-    box-shadow: 0 0 2px #888 inset;
+    // box-shadow: 0 0 1px #888 inset;
+    color: @yellow-1;
 }
 
