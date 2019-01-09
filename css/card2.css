@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,400,700');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
 
 .recette-comm {
@@ -19,6 +21,8 @@
     margin-left: 50px;
   width: 30%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 
 }
 .resume-comm {
@@ -31,6 +35,9 @@
     background-color: white;
     box-shadow: 0 0 8px #202020 inset;
     text-align: center;
+    display: flex;
+    align-items: center;
+
     
 }
 .note {
@@ -43,6 +50,8 @@
     box-shadow: 0 0 8px #202020 inset;
     text-align: center;
     
+
+    
 }
 .xp_bar {
     border: 0px solid black;
@@ -53,12 +62,34 @@
     background-color: white;
     box-shadow: 0 0 8px #202020 inset;
     text-align: center;
+    display: flex;
+    align-items: center;
 }
-.imagedefou {
+.image_stats {
     border-radius: 10px;
     width: 100%;
     border:0px solid black;
     border-radius: 10px;
-  
-
 }
+
+.outer {
+    width: 80%;
+    background: rgb(0, 48, 66);
+    margin: auto;
+    text-align: center;
+    display: block;
+    border-radius: 4px;
+  }
+  
+  .xp-bar {
+    border: 2px solid rgb(0, 110, 153);
+    border-radius: 4px;
+    display: block;
+    height: 1em;
+    background: linear-gradient(
+      to bottom,
+      rgb(0, 183, 255),
+      rgb(166, 230, 255) 20%,
+      rgb(0, 183, 255) 50%
+    )
+  }
