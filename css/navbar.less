@@ -1,7 +1,10 @@
-
+* {
+    box-sizing: border-box;
+}
 
 /*-----LESS VARIABLES-----*/
 @light : #FAFAFA;
+@light-opacity : #FAFAFADD;
 @dark: #404040;
 @blue-1 : #00C8F8;
 @blue-2 : #59C4C5;
@@ -74,7 +77,9 @@ header a {
 
 
 /*-----STYLE DE LA PARTIE VISIBLE-----*/
-
+.nav-bar-mobile {
+    display: none;
+}
 .nav-bar {
     height: 50px;
 
@@ -83,7 +88,7 @@ header a {
 
     line-height: 50px;
 
-    background-color: @light;
+    background-color: @light-opacity;
     box-shadow: 0 0px 10px @dark;
 
     z-index: 1000;
@@ -98,16 +103,8 @@ header a {
 
     text-align: center;
 }
-.mobile-logo {
-    display:none;
-}
 .nav-logo img {
     width: 140px;
-    height: 50px;
-    padding: 5px 15px;
-}
-.mobile-logo img {
-    width: 70px;
     height: 50px;
     padding: 5px 15px;
 }
@@ -132,6 +129,20 @@ header a {
 
 .center-nav {
     width: 60%;
+
+    .desktop-link {
+        display: block;
+    }
+
+    .mobile-link {
+        display: none;
+    }
+
+    .mobile-link img {
+    width: 60px;
+    height: 50px;
+    padding: 5px 5px;
+}
 }
 
     /*RIGHT BUTTONS*/
@@ -222,18 +233,65 @@ header a {
 }
 
 @media all and (max-width: 768px) {
-    .nav-logo {
-        display: none
+    .header-fix {
+        height: 53px;
     }
-    .mobile-logo {
-        width: 20%;
-        margin: 0 2px;
-        padding: 0 2px;
-    text-align: left;
-        display:block;
+    .nav-bar {
+        display: none;
     }
-    header {
-    width: 100%;
+    .nav-bar-mobile {
+        padding: 0 10px;
+        display: flex;
+        justify-content: space-between;
+        background-color: @light-opacity;
+
+        a.mobile-button {
+            margin-top: 2px;
+        }
+        a.mobile-button img {
+            width: 48px;
+            height: 48px;
+        }
+        div.mobile-button img {
+            width: 42px;
+            height: 38px;
+            margin: 6px auto;
+        }
+        .mobile-button.black .fas {
+            color: #404040;
+        }
+        .mobile-search {
+            width: 100%;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            
+            .mobile-search-form {
+                width: 90%;
+
+                input {
+                    width: 100%;
+                    font-size: 20px;
+                    margin: 5px auto;
+                    padding: 5px;
+                    border-radius: 10px;
+                    background-color: #FFC33C50;
+                    border: none;
+                }
+
+            }
+
+            .mobile-search-close {
+                width: 10%;
+                text-align: center;
+            }
+
+        }
+        .fas {
+            font-size: 2rem;
+            line-height: 50px;
+            color: @yellow-1;
+        }
     }
 }
 

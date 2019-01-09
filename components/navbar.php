@@ -18,12 +18,12 @@
             </div>
         </div>
         <div class="nav-bar">
-            <a class="nav-logo" href="../views/home"><img src="../images/logo/test3.png" alt="logo miamly"></a>            <a class="mobile-logo" href="../views/home"><img src="../images/logo/test.png" alt="logo miamly"></a>
+            <a class="nav-logo" href="../views/home"><img src="../images/logo/test3.png" alt="logo miamly"></a>
             <div class="nav-menu"><img src="../images/logo/ham.png" alt="icon hamburger"></div>
             <div class="nav-items center-nav">
-                <a href="../views/recette">Recette</a>
-                <a href="">Plat du Jour</a>
-                <a href="">Mardi Gras</a>
+                <a class="desktop-link" href="../views/recette">Recette</a>
+                <a class="desktop-link" href="">Plat du Jour</a>
+                <a class="desktop-link" href="">Mardi Gras</a>
             </div>
             <div class="nav-search-bar center-nav">
                 <form class="nav-search-input" action="../actions/action-search.php" method="GET">
@@ -32,6 +32,29 @@
                 <div class="close-search"><i class="fas fa-times"></i></div>
             </div>
             <div class="nav-right-icons"><i class="fas fa-search toggle-search-bar"></i><i class="fas fa-user"></i></div>
+        </div>
+
+        <!-- MENU MOBILE -->
+        <div class="nav-bar-mobile">
+            <a class="mobile-button" href="../views/home"><img src="../images/logo/test.png" alt="logo miamly"></a>
+            <div class="mobile-button"><img src="../images/logo/ham.png" alt="icon hamburger"></div>
+            <a class="mobile-button black" href="../views/recette">
+                <i class="fas fa-clipboard-list"></i>
+            </a>
+            <a class="mobile-button black" href="">
+                <i class="fas fa-utensils"></i>
+            </a>
+            <a class="mobile-button black" href="">
+                <i class="fas fa-calendar"></i>
+            </a>
+            <div class="mobile-search">
+                <form class="mobile-search-form" action="../actions/action-search.php" method="GET">
+                    <input name="search" type="text" placeholder="Que recherchez vous ?">
+                </form>
+                <div class="mobile-search-close"><i class="fas fa-times"></i></div>
+            </div>
+            <i class=" mobile-button fas fa-search toggle-mobile-search-bar"></i>
+            <a class="mobile-button" href=""><i class="fas fa-user"></i></a>
         </div>
     </nav>
 </header>

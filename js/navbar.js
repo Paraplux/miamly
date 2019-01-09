@@ -12,14 +12,30 @@ $(document).ready(function(){
         e.stopPropagation()
     })
 
+    $('.toggle-mobile-search-bar').on('click', function (e) {
+        $('.mobile-button').css('display', 'none')
+        $('.mobile-search').fadeIn(800)
+        $('.mobile-search').css('display', 'flex')
+        e.stopPropagation()
+    }) 
+
 
     $('.close-search').on('click', function(e){
         $('.nav-items').css('display', 'flex')
         $('.nav-search-icon').css('display', 'flex')
         $('.nav-search-bar').css('display', 'none')
+
+        $('.mobile-button').css('display', 'block')
+        $('.mobile-search-form').css('display', 'none')
         e.stopPropagation()
     })
 
+    $('.mobile-search-close').on('click', function (e) {
+        $('.mobile-button').css('display', 'block')
+        $('.mobile-search').css('display', 'none')
+        e.stopPropagation()
+    })
+    
     $('.nav-menu').on('click',function(){
         
         var headerPosition = $('header').css('transform')
