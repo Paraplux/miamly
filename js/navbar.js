@@ -36,7 +36,7 @@ $(document).ready(function(){
         e.stopPropagation()
     })
     
-    $('.nav-menu').on('click',function(){
+    $('.toggle-header').on('click',function(){
         
         var headerPosition = $('header').css('transform')
         console.log(headerPosition)

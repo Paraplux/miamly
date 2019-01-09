@@ -19,7 +19,7 @@
         </div>
         <div class="nav-bar">
             <a class="nav-logo" href="../views/home"><img src="../images/logo/test3.png" alt="logo miamly"></a>
-            <div class="nav-menu"><img src="../images/logo/ham.png" alt="icon hamburger"></div>
+            <div class="nav-menu toggle-header"><img src="../images/logo/ham.png" alt="icon hamburger"></div>
             <div class="nav-items center-nav">
                 <a class="desktop-link" href="../views/recette">Recette</a>
                 <a class="desktop-link" href="">Plat du Jour</a>
@@ -37,7 +37,7 @@
         <!-- MENU MOBILE -->
         <div class="nav-bar-mobile">
             <a class="mobile-button" href="../views/home"><img src="../images/logo/test.png" alt="logo miamly"></a>
-            <div class="mobile-button"><img src="../images/logo/ham.png" alt="icon hamburger"></div>
+            <div class="mobile-button toggle-header"><img src="../images/logo/ham.png" alt="icon hamburger"></div>
             <a class="mobile-button black" href="../views/recette">
                 <i class="fas fa-clipboard-list"></i>
             </a>
