@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="nav-bar">
-            <a class="nav-logo" href="../views/home"><img src="../images/logo/test3.png" alt="logo miamly"></a>
+            <a class="nav-logo" href="../views/home"><img src="../images/logo/test3.png" alt="logo miamly"></a>            <a class="mobile-logo" href="../views/home"><img src="../images/logo/test.png" alt="logo miamly"></a>
             <div class="nav-menu"><img src="../images/logo/ham.png" alt="icon hamburger"></div>
             <div class="nav-items center-nav">
                 <a href="../views/recette">Recette</a>
