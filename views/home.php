@@ -35,8 +35,10 @@ include '../components/navbar.php';
     <div class="newsletter">
         <h3 class="newsletter-title">Inscrivez vous à la newsletter : </h3>
         <form action="">
-            <input type="email" placeholder="Entrez votre adresse mail...">
-            <button type="submit">S'inscrire</button>
+            <div class="newsletter-group">
+                <input type="email" placeholder="Entrez votre adresse mail...">
+                <button class="btn-home" type="submit">S'inscrire</button>
+            </div>
         </form>
         <div class="newsletter-text">
             N'hésitez pas à vous inscrire à notre newsletter afin de en rater aucune recette ! Ravivez vos amis avec des plats délicieux et gras...
