@@ -1,10 +1,10 @@
 <?php
-include("../components/db.php");
+include "../components/db.php";
+$sqlSearch = array(); // Stop errors when $words is empty
+$currentSearch = explode(" ", $_GET['search']);
 
-$search = array(); // Stop errors when $words is empty
-
-foreach ($_SESSION['search'] as $keyword) {
-        $search[] = '
+foreach ($currentSearch as $keyword) {
+        $sqlSearch[] = '
         r_nom SOUNDS LIKE "%' . $keyword . '%"
         OR r_nom LIKE "%' . $keyword . '%"
         OR r_content LIKE "%' . $keyword . '%"
@@ -19,7 +19,7 @@ foreach ($_SESSION['search'] as $keyword) {
 $sql = 'SELECT mly_recettes.r_id, mly_recettes.r_type, mly_recettes.r_nom, mly_recettes.r_content, mly_recettes.r_date, mly_recettes.r_createur, mly_photos.p_link
         FROM mly_recettes
         INNER JOIN mly_photos ON mly_recettes.r_id = mly_photos.p_recette_id
-        WHERE ' . implode(" OR ", $search) . '
+        WHERE ' . implode(" OR ", $sqlSearch) . '
         GROUP BY mly_recettes.r_id, mly_photos.p_link';
 
 
