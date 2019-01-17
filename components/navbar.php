@@ -22,7 +22,7 @@
             <div class="nav-menu toggle-header"><img src="../images/logo/ham.png" alt="icon hamburger"></div>
             <div class="nav-items center-nav">
                 <a class="desktop-link" href="../views/recette">Recette</a>
-                <a class="desktop-link" href="">Plat du Jour</a>
+                <a class="desktop-link" href="../views/ajouts">Derniers ajouts</a>
                 <a class="desktop-link" href="">Mardi Gras</a>
             </div>
             <div class="nav-search-bar center-nav">
@@ -31,7 +31,16 @@
                 </form>
                 <div class="close-search"><i class="fas fa-times"></i></div>
             </div>
-            <div class="nav-right-icons"><i class="fas fa-search toggle-search-bar"></i><i class="fas fa-user"></i></div>
+            <div class="nav-right-icons">
+                <i class="fas fa-search toggle-search-bar"></i>
+                <?php if(isset($_SESSION['utilisateur'])) {
+                    $account = "../views/account.php";
+                } else {
+                    $account = "../views/login.php";
+                }
+                ?>
+                <a  href=<?= $account; ?>><i class="fas fa-user"></i></a>
+            </div>
         </div>
 
         <!-- MENU MOBILE -->
@@ -54,7 +63,7 @@
                 <div class="mobile-search-close"><i class="fas fa-times"></i></div>
             </div>
             <i class=" mobile-button fas fa-search toggle-mobile-search-bar"></i>
-            <a class="mobile-button" href=""><i class="fas fa-user"></i></a>
+            <a class="mobile-button" href="../views/account.php"><i class="fas fa-user"></i></a>
         </div>
     </nav>
 </header>

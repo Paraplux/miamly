@@ -9,7 +9,8 @@ if (session_status() == PHP_SESSION_NONE) {
 include '../components/header.php';
 include '../components/navbar.php';
 ?>
-<link rel="stylesheet" href="../css/recette.css">
+<link rel="stylesheet/less" href="../css/recette.less">
+
 <div class="container">
 
     <div class="main-content">

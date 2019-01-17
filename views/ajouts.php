@@ -1,8 +1,4 @@
-<!-- TOP 10 RECETTES -->
-<!-- TOUT POUR MON BIDON -->
-<!-- MES SELECTIONS -->
-<!-- MANGER SUR LE POUCE -->
-<!-- A PARTAGER  -->
+<!-- DERNIERS AJOUTS -->
 
 <?php
 
@@ -13,13 +9,20 @@ if (session_status() == PHP_SESSION_NONE) {
 include '../components/header.php';
 include '../components/navbar.php';
 ?>
-<link rel="stylesheet/less" href="../css/catalogue.less">
+
+<link rel="stylesheet/less" href="../css/ajouts.less">
 <link rel="stylesheet/less" href="../css/cards.less">
 
-<div class="catalogue">
+<h3 class="ajouts-titre">Jetez un oeil aux derniers ajouts : </h3>
+<div class="ajouts">
     <?php
-    include '../models/model-catalogue.php';
+    include '../models/model-ajouts.php';
+    $type = array();
     foreach ($recettes as $recette) :
+        if (in_array($recette['r_type'], $type)) {
+            continue;
+        }
+    $type[] = $recette['r_type'];
     ?>
         <div class="card" type="<?= $recette['r_type']; ?>">
             <div class="card-thumb">
@@ -57,6 +60,7 @@ include '../components/navbar.php';
     endforeach;
     ?>
 </div>
-<!-- /CARDS -->
 
-<?php include "../components/footer.php"; ?>
+<?php 
+include '../components/footer.php';
+?>

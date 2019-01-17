@@ -3,12 +3,11 @@ include '../components/header.php';
 include '../components/navbar.php';
 ?>
 
-<link rel="stylesheet" href="../css/login.css">
-<link rel="stylesheet" href="../css/form.css">
+<link rel="stylesheet/less" href="../css/login.less">
+<link rel="stylesheet/less" href="../css/form.less">
 
-<div class="container">
     <section class="login-page">
-
+        <h2>Connectez vous</h2>
 
         <form class="mly-form" method="POST" action="../actions/action-login.php">
             <input name="login" type="text" placeholder="Votre mail ou pseudo">
@@ -21,12 +20,10 @@ include '../components/navbar.php';
 
         
         <article class="login-content">
-            <h1>Connectez vous.</h1>
             <p>Restez connecté sur Miamly afin de ne rater aucune recettes!</p>
             <p>Vos informations ne seront jamais transmises.</p>
         </article>
     </section>
-</div>
 
 <?php 
 include '../components/footer.php';

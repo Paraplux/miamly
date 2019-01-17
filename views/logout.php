@@ -6,4 +6,4 @@ if (session_status() == PHP_SESSION_NONE) {
 
 unset($_SESSION['utilisateur']);
 
-header('Location: ./index');
+header('Location: ../index');

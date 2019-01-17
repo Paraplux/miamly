@@ -1,0 +1,137 @@
+/*CARD*/
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 450px;
+
+    margin: 1rem;
+
+    font-family: sans-serif;
+
+    
+    border: 7px solid #fff;
+    border-radius: 50px;
+
+    overflow: hidden;
+    box-shadow: 0 0 7px #202020;
+    filter: grayscale(20%);
+    transform: scale(1);
+}
+        .card img {
+            object-fit: cover;
+            height: 200px;
+            width: 100%;
+        }
+
+.card[type="Entrée"] .card-content {
+    background-color: #59c3c5;
+}
+.card[type="Entrée"] .card-category {
+    color: #3b7e80;
+}
+.card[type="Entrée"] .card-footer {
+    color: #3b7e80;
+}
+.card[type="Plat"] .card-content {
+    background-color: #ff4c65;
+}
+.card[type="Plat"] .card-category {
+    color: #7c2632;
+}
+.card[type="Plat"] .card-footer {
+    color: #7c2632;
+}
+.card[type="Dessert"] .card-content {
+    background-color: #ffc33c;
+}
+.card[type="Dessert"] .card-category {
+    color: #977526;
+}
+.card[type="Dessert"] .card-footer {
+    color: #977526;
+}
+
+.card:hover {
+    transition-duration: 200ms;
+    filter: grayscale(0);
+    transform: scale(1.005);
+    box-shadow: 0 0 15px #404040;
+    cursor: pointer;
+}
+
+.card:hover .card-thumb-fav {
+    display: block;
+}
+
+.card-thumb {
+    position: relative;
+}
+
+.card-thumb-fav {
+    display: none;
+    position: absolute;
+    top: 15%;
+    right: 40%;
+
+    
+    color: rgb(145, 145, 145);
+}
+
+.fav-checkbox {
+    position: absolute;
+}
+
+.fav-checkbox-input {
+    display: none;
+}
+
+.fav-checkbox-icon {
+    padding: 1rem;
+    cursor: pointer;
+    user-select: none;
+    font-size: 3rem;
+}
+
+.fav-checkbox-input:checked ~ .fav-checkbox-icon {
+    color: red;
+}
+
+.card-content {
+    height: 190px;
+    padding: 10px;
+    border-radius: 0 0 12px 12px ;
+}
+
+.card-category {
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #3b7e80;
+    text-transform: uppercase;
+
+    border-bottom: 1px solid #fff;
+}
+.card-title,
+.card-text {
+    font-size: 0.9rem;
+    color: #eee;
+}
+
+.card-text {
+    border-radius: 10px;
+}
+
+.card-footer {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+    background-color: #fff;
+}
+
+.card-footer p {
+    font-size: 0.9rem;
+    margin: 9px 0 4px 0;
+}
+
+
