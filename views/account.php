@@ -68,36 +68,51 @@ include '../components/navbar.php';
             <label for="">Titre de votre recette :</label><br>
             <input type="text"><br>
 
-            <label for="">Type de recette :</label><br>
-            <select name="" id="">
-                <option value="entree">Entrée</option>
-                <option value="plat">Plat</option>
-                <option value="dessert">Dessert</option>
-            </select><br>
+            <div class="form-group">
+                <label for="">Type de recette :</label><br>
+                <select name="">
+                    <option value="entree">Entrée</option>
+                    <option value="plat">Plat</option>
+                    <option value="dessert">Dessert</option>
+                </select><br>
+            </div>
             
-            <label for="">Difficulté : </label><br>
-            <input type="range"><br>
+            <div class="form-group">
+                <label for="">Difficulté : </label><br>
+                <input type="range"><br>
+            </div>
 
-            <label for="">Durée : </label><br>
-            <select name="" id="">
-                <option value="rapide">Rapide</option>
-                <option value="moyenne">Moyenne</option>
-                <option value="longue">Longue</option>
-            </select><br>
+            <div class="form-group">
+                <label for="">Durée : </label><br>
+                <select name="" >
+                    <option value="rapide">Rapide</option>
+                    <option value="moyenne">Moyenne</option>
+                    <option value="longue">Longue</option>
+                </select><br>
+            </div>
 
-            <label for="">Proposer en tant que : </label><br>
-            <input readonly type="text" value="<?= $_SESSION['utilisateur']['u_pseudo'] ?> (vous)"><br>
+            <div class="form-group">
+                <label for="">Proposer en tant que : </label><br>
+                <input readonly type="text" value="<?= $_SESSION['utilisateur']['u_pseudo'] ?> (vous)"><br>
+            </div>
 
             <label for="">Déroulé de la recette</label><br>
-            <input type="text">
+            <div class="step-container">
+                <div class="number" step=1>
+                    1
+                </div>
+                <textarea name="step[]" class="step"></textarea>
+                <div class="more" step=1>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
 
-
-            <input type="submit" value="Proposer"><br>
+            <input class="button-submit" type="submit" value="Proposer"><br>
         </form>
     </div>
 </div>
 
-
+<script src="../js/account.js"></script>
 <?php 
 include '../components/footer.php';
 ?>
