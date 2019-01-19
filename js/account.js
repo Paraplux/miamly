@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     /*ADD MORE STEPS*/
     $(document).on('click', '.more', function(){
         var nextStep = $(this).attr('step')
@@ -8,7 +7,6 @@ $(document).ready(function () {
         $('<div class="step-container"><div removable class="number" step=' + nextStep + '>' + nextStep + '</div><textarea name="step[]" class="step"></textarea><div class="more" step=' + nextStep + '><i class="fas fa-plus"></i></div></div>').insertBefore('.button-submit')
         $(this).hide()
     })
-
     /*TOGGLE THE MINUS SIGN ON HOVER*/
     $(document).on('mouseenter', '.number[removable]', function(){
         $(this).html('<i class="fas fa-minus"></i>')
@@ -17,7 +15,6 @@ $(document).ready(function () {
         var number = $(this).attr('step')
         $(this).html(number)
     })
-
     /*REMOVE STEPS*/
     $(document).on('click', '.number[removable]', function () {
         if($(this).parent().next().attr('type') == 'submit') {
@@ -34,7 +31,5 @@ $(document).ready(function () {
             })
         }   
     })
-
-
 /* END of JS code*/
 })

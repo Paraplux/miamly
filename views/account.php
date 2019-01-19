@@ -64,36 +64,38 @@ include '../components/navbar.php';
     </div>
     <div class="add-recette">
         <h2>Proposer une recette</h2>
-        <form class="mly-form" action="">
+        <form class="mly-form" action="../actions/action-addrecette.php" method="POST" enctype="multipart/form-data">
             <label for="">Titre de votre recette :</label><br>
-            <input type="text"><br>
+            <input name="nom" type="text"><br>
+
+            <input name="photos[]" type="file" multiple>
 
             <div class="form-group">
                 <label for="">Type de recette :</label><br>
-                <select name="">
-                    <option value="entree">Entrée</option>
-                    <option value="plat">Plat</option>
-                    <option value="dessert">Dessert</option>
+                <select name="typerecette">
+                    <option value="Entrée">Entrée</option>
+                    <option value="Plat">Plat</option>
+                    <option value="Dessert">Dessert</option>
                 </select><br>
             </div>
             
             <div class="form-group">
                 <label for="">Difficulté : </label><br>
-                <input type="range"><br>
+                <input name="difficulte" type="range" min="1" max="10"><br>
             </div>
 
             <div class="form-group">
                 <label for="">Durée : </label><br>
-                <select name="" >
-                    <option value="rapide">Rapide</option>
-                    <option value="moyenne">Moyenne</option>
-                    <option value="longue">Longue</option>
+                <select name="duree" >
+                    <option value="Rapide">Rapide</option>
+                    <option value="Moyenne">Moyenne</option>
+                    <option value="Longue">Longue</option>
                 </select><br>
             </div>
 
             <div class="form-group">
                 <label for="">Proposer en tant que : </label><br>
-                <input readonly type="text" value="<?= $_SESSION['utilisateur']['u_pseudo'] ?> (vous)"><br>
+                <input name="createur" readonly type="text" value="<?= $_SESSION['utilisateur']['u_pseudo'] ?>"><br>
             </div>
 
             <label for="">Déroulé de la recette</label><br>
