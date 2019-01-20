@@ -8,6 +8,22 @@ if (session_status() == PHP_SESSION_NONE) {
 
 include '../components/header.php';
 include '../components/navbar.php';
+
+// TEMPORAIRE
+require '../components/db.php';
+
+$sql = 'SELECT r_id, r_nom, r_content, r_date, r_type, r_createur, r_date, r_difficulte, r_duree, p_link
+        FROM mly_recettes
+        INNER JOIN mly_photos ON r_id = p_recette_id
+        WHERE r_id = 15
+        GROUP BY r_id, p_link';
+
+$req = $pdo->prepare($sql);
+$req->execute();
+
+$data = $req->fetch();
+$req->closeCursor();
+// /TEMPORAIRE
 ?>
 <link rel="stylesheet/less" href="../css/recette.less">
 
@@ -15,7 +31,7 @@ include '../components/navbar.php';
 
     <div class="main-content">
         <div class="main-content-header">
-            <h1 class="main-content-title">Titre de la recette</h1>
+            <h1 class="main-content-title"><?= $data['r_nom']; ?></h1>
             <div class="main-content-fav">
                 <label class="fav-checkbox">
                     <input type="hidden" name="fax" value="False" />
@@ -25,19 +41,11 @@ include '../components/navbar.php';
             </div>
         </div>
         <div class="main-carousel">
-            <div class="carousel-cell"><img src="../images/thumbs/recettes/brownie.jpg" alt="Photo de Brownie"></div>
-            <div class="carousel-cell"><img src="../images/thumbs/recettes/brownie.jpg" alt="Photo de Brownie"></div>
-            <div class="carousel-cell"><img src="../images/thumbs/recettes/brownie.jpg" alt="Photo de Brownie"></div>
-            <div class="carousel-cell"><img src="../images/thumbs/recettes/brownie.jpg" alt="Photo de Brownie"></div>
-            <div class="carousel-cell"><img src="../images/thumbs/recettes/brownie.jpg" alt="Photo de Brownie"></div>
+            <div class="carousel-cell"><img src="<?= $data['p_link']; ?>" alt="Photo de <?= $data['r_nom']; ?>"></div>
         </div>
         <div class="main-content-step">
             <ol>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo architecto qui vero ullam quisquam beatae voluptates. Ratione, suscipit ad molestias officiis minima doloremque. Illo, ratione? Sint perferendis dolore ipsum quisquam.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo architecto qui vero ullam quisquam beatae voluptates. Ratione, suscipit ad molestias officiis minima doloremque. Illo, ratione? Sint perferendis dolore ipsum quisquam.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo architecto qui vero ullam quisquam beatae voluptates. Ratione, suscipit ad molestias officiis minima doloremque. Illo, ratione? Sint perferendis dolore ipsum quisquam.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo architecto qui vero ullam quisquam beatae voluptates. Ratione, suscipit ad molestias officiis minima doloremque. Illo, ratione? Sint perferendis dolore ipsum quisquam.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo architecto qui vero ullam quisquam beatae voluptates. Ratione, suscipit ad molestias officiis minima doloremque. Illo, ratione? Sint perferendis dolore ipsum quisquam.</li>
+                <?= $data['r_content']; ?>
             </ol>
         </div>
         <br><hr><br>
@@ -73,9 +81,9 @@ include '../components/navbar.php';
             </ul>
         </div>
         <div class="side-content-infos">
-            <p>Facile / 1500 kcal</p>
+            <p>Difficulté : <?= $data['r_difficulte']; ?>/10 - Durée : <?= $data['r_duree']; ?></p>
         </div>
-        <div class="side-content-signature">09-12-2018 / Antoine</div>
+        <div class="side-content-signature"><?= $data['r_date']; ?> / <?= $data['r_createur']; ?></div>
     </div>
 
 </div>
