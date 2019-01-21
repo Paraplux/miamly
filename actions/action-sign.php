@@ -8,14 +8,17 @@ if(isset($_POST)) {
 
     if(empty($_POST['email'])) { //erreur
         $_SESSION['toast']['erreur']['email'] = "Le champ mail est vide";
+        echo '1';
     }
     if (empty($_POST['pseudo'])) { //erreur
         $_SESSION['toast']['erreur']['pseudo'] = "Le champ pseudo est vide";
+        echo '2';
     }
     if (empty($_POST['password']) || $_POST['password'] != $_POST['password_confirmation']) { //erreur
         $_SESSION['toast']['erreur']['password'] = "Le champ mot de passe est vide ou non valide!";
+        echo '3';
     }
-
+    
     if (empty($_SESSION['toast']['erreur'])) {
         include '../components/db.php';
         $req = $pdo->prepare("INSERT INTO mly_utilisateurs SET u_email = :email, u_pseudo = :pseudo, u_password = :password");
@@ -28,5 +31,7 @@ if(isset($_POST)) {
         $_SESSION['toast']['success']['sign'] = "Vous êtes inscrit";
         header('Location: ../views/login.php');
         exit();
+    } else {
+        echo '4';
     }
 }
