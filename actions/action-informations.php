@@ -6,10 +6,28 @@ if (session_status() == PHP_SESSION_NONE) {
 
 if(isset($_POST)) { 
 
-    include '../components/db.php';
+    require '../components/db.php';
+    require '../components/class.upload.php';
+    
+    $avatar = new Upload($_FILES['avatar']);
+            if ($avatar->uploaded) {
+                $avatarsha1 = 'avatar_' . sha1(base64_encode(openssl_random_pseudo_bytes(30)));
+                $avatar->file_new_name_body = $avatarsha1;
+                $avatar->image_resize = true;
+                $avatar->image_x = 160;
+                $avatar->image_y = 160;
+                $avatar->image_convert = 'jpg';
+                $square->image_ratio_crop = true;
+                $avatar->Process('../images/avatars');
+                $avatarlink = '../images/avatars/' . $avatarsha1 . '.jpg';
+                if ($avatar->processed) {
+                    $avatar->Clean();
+                }
+            }
 
     $sql = "UPDATE mly_utilisateurs
             SET u_pseudo = :pseudo,
+                u_avatar = :avatar,
                 u_prenom = :prenom,
                 u_nom = :nom,
                 u_age = :age,
@@ -23,6 +41,7 @@ if(isset($_POST)) {
     $req->execute(array(
         ':email' => $_POST['email'],
         ':pseudo' => $_POST['pseudo'],
+        ':avatar' => $avatarlink,
         ':prenom' => $_POST['prenom'],
         ':nom' => $_POST['nom'],
         ':age' => $_POST['age'],

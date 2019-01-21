@@ -33,16 +33,22 @@
             </div>
             <div class="nav-right-icons">
                 <i class="fas fa-search toggle-search-bar"></i>
-                <?php if(isset($_SESSION['utilisateur'])) {
+                <?php
+                if(isset($_SESSION['utilisateur'])) {
                     $account = "../views/account.php";
                 } else {
                     $account = "../views/login.php";
                 }
+                if($_SESSION['utilisateur']['u_avatar'] != NULL) {
+                    $avatar = '<img class="avatar" src="' . $_SESSION['utilisateur']['u_avatar'] . '" alt="">';
+                } else {
+                    $avatar = '<i class="fas fa-user"></i>';
+                }
                 ?>
-                <a  href=<?= $account; ?>><i class="fas fa-user"></i></a>
+                <a  href=<?= $account; ?>><?= $avatar; ?></a>
             </div>
         </div>
-
+                
         <!-- MENU MOBILE -->
         <div class="nav-bar-mobile">
             <a class="mobile-button" href="../views/home"><img src="../images/logo/miamly-small-logo.png" alt="logo miamly"></a>
@@ -64,6 +70,11 @@
             </div>
             <i class=" mobile-button fas fa-search toggle-mobile-search-bar"></i>
             <a class="mobile-button" href="../views/account.php"><i class="fas fa-user"></i></a>
+        </div>
+
+        <!-- POP UP ACCOUNT -->
+        <div class="popup">
+            
         </div>
     </nav>
 </header>

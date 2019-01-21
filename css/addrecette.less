@@ -1,0 +1,95 @@
+/*-----LESS VARIABLES-----*/
+@light : #FAFAFA;
+@dark: #404040;
+@blue-1 : #00C8F8;
+@blue-2 : #59C4C5;
+@yellow-1 : #FFC33C;
+@yellow-2 : #FBE2B4;
+@red : #FF4C65;
+
+/*-----FONTS IMPORT-----*/
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+* {
+    box-sizing: border-box;
+    /* border:1px solid red; */
+}
+
+.add-recette {
+    form {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    h2 {
+        width: 100%;
+        margin: 1rem 0;
+        padding: 0;
+        font-family:'Pacifico' ,serif;
+        text-align: center;
+        font-size: 2.2rem;
+        color: @dark;
+        font-weight: 500;
+    }
+    input[type='submit'] {
+        width: 20%;
+    }
+    label {
+        text-align: center;
+    }
+    .inforecette {
+        width: 50%;
+    }
+    .deroulerecette {
+        width: 50%;
+    }
+}
+
+/*STEP BY STEP STYLE*/
+
+.step-container {
+    width: 85%;
+    margin:auto;
+    display: flex;
+    position: relative;
+
+    .number {
+        width: 10%;
+        left: 0;
+        font-weight: bold;
+    }
+    .step {
+        width: 70%;
+        font-size: 1.1rem;
+        font-family: sans-serif;
+        padding: 10px;
+    }
+    .more {
+        width: 10%;
+        right:0;
+    }
+    .number, .more {
+        position: absolute;
+        top: 50%;
+
+        font-size: 1.5rem;
+        color: @light;
+        background-color: @yellow-1;
+        border-radius: 2rem;
+        max-height: 50px;
+        max-width: 50px;
+        line-height: 50px;
+        text-align: center;
+
+        transform: translateY(-50%)
+    }
+    .number:hover, .more:hover {
+        cursor: pointer;
+        background-color: lighten(@yellow-1, 10%);
+    }
+    .number:active, .more:active {
+        background-color: darken(@yellow-1, 10%);
+    }
+    
+}

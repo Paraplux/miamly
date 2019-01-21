@@ -14,23 +14,8 @@ include '../components/navbar.php';
 
 <div class="account">
     <div class="informations">
-        <h2>Modifier votre mot de passe</h2>
-
-        <form class="mly-form" action="">
-            <label for="">Ancien mot de passe :</label><br>
-            <input name="password_old" type="password"><br>
-
-            <label for="">Nouveau mot de passe :</label><br>
-            <input name="password_new" type="password"><br>
-
-            <label for="">Confirmation du mot de passe :</label><br>
-            <input name="password_confirmation" type="password"><br>
-        </form>
-
-        <br> <br> <hr> <br>
-
-        <h2 id="ennemi" sang="peu">Vos informations</h2>
-        <form class="mly-form" action="../actions/action-informations.php" method='POST'>
+        <h2>Vos informations</h2>
+        <form class="mly-form" action="../actions/action-informations.php" method='POST' enctype="multipart/form-data">
 
             <label for="">Votre adresse mail :</label><br>
             <input name="email" type="email" 
@@ -41,8 +26,9 @@ include '../components/navbar.php';
             value="<?=isset($_SESSION['utilisateur']) ? $_SESSION['utilisateur']['u_pseudo'] : "";?>"><br>
 
             <label for="">Votre avatar :</label><br>
-            <input type="text" 
-            value="<?=isset($_SESSION['utilisateur']) ? $_SESSION['utilisateur']['u_avatar'] : "";?>"><br>
+            <input name="avatar" type="file"><br>
+            <div>Avatar actuel :</div><br>
+            <img src="<?= $_SESSION['utilisateur']['u_avatar'] ?>" alt=""><br><br><br>
 
             <label for="">Votre prénom :</label><br>
             <input name="prenom" type="text" 
@@ -72,61 +58,23 @@ include '../components/navbar.php';
 
         </form>
         <a href="./logout.php">Se déconnecter</a>
-        
     </div>
-    <div class="add-recette">
-        <h2>Proposer une recette</h2>
-        <form class="mly-form" action="../actions/action-addrecette.php" method="POST" enctype="multipart/form-data">
-            <label for="">Titre de votre recette :</label><br>
-            <input name="nom" type="text"><br>
+    <div class="changepassword">
+        <h2>Modifier votre mot de passe</h2>
+        <form class="mly-form" method="POST" action="../actions/action.changepassword.php">
 
-            <input name="photos[]" type="file" multiple>
+            <label for="">Nouveau mot de passe :</label><br>
+            <input name="password_new" type="password"><br>
 
-            <div class="form-group">
-                <label for="">Type de recette :</label><br>
-                <select name="typerecette">
-                    <option value="Entrée">Entrée</option>
-                    <option value="Plat">Plat</option>
-                    <option value="Dessert">Dessert</option>
-                </select><br>
-            </div>
-            
-            <div class="form-group">
-                <label for="">Difficulté : </label><br>
-                <input name="difficulte" type="range" min="1" max="10"><br>
-            </div>
+            <label for="">Confirmation du mot de passe :</label><br>
+            <input name="password_confirmation" type="password"><br>
 
-            <div class="form-group">
-                <label for="">Durée : </label><br>
-                <select name="duree" >
-                    <option value="Rapide">Rapide</option>
-                    <option value="Moyenne">Moyenne</option>
-                    <option value="Longue">Longue</option>
-                </select><br>
-            </div>
-
-            <div class="form-group">
-                <label for="">Proposer en tant que : </label><br>
-                <input name="createur" readonly type="text" value="<?= $_SESSION['utilisateur']['u_pseudo'] ?>"><br>
-            </div>
-
-            <label for="">Déroulé de la recette</label><br>
-            <div class="step-container">
-                <div class="number" step=1>
-                    1
-                </div>
-                <textarea name="step[]" class="step"></textarea>
-                <div class="more" step=1>
-                    <i class="fas fa-plus"></i>
-                </div>
-            </div>
-
-            <input class="button-submit" type="submit" value="Proposer"><br>
+            <input type="submit" value="Modifier mon mot de passe"><br>
         </form>
     </div>
 </div>
 
-<script src="../js/account.js"></script>
+
 <?php 
 include '../components/footer.php';
 ?>
