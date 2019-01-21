@@ -29,7 +29,7 @@ include '../components/navbar.php';
 
         <br> <br> <hr> <br>
 
-        <h2>Vos informations</h2>
+        <h2 id="ennemi" sang="peu">Vos informations</h2>
         <form class="mly-form" action="../actions/action-informations.php" method='POST'>
 
             <label for="">Votre adresse mail :</label><br>

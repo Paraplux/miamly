@@ -44,10 +44,10 @@ if(isset($_POST)){
         /*Requête pour l'insertion des photos + upload des photos*/
         $files = array(); 
         foreach ($_FILES['photos'] as $k => $l) {
-        foreach ($l as $i => $v) {
-            if (!array_key_exists($i, $files)) $files[$i] = array();
-            $files[$i][$k] = $v;
-        }
+            foreach ($l as $i => $v) {
+                if (!array_key_exists($i, $files)) $files[$i] = array();
+                $files[$i][$k] = $v;
+            }
         }
 
         foreach($files as $file) {

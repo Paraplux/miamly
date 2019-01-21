@@ -11,10 +11,13 @@ $(document).ready(function () {
     $(document).on('mouseenter', '.number[removable]', function(){
         $(this).html('<i class="fas fa-minus"></i>')
     })
+
     $(document).on('mouseleave', '.number', function () {
         var number = $(this).attr('step')
         $(this).html(number)
     })
+
+    
     /*REMOVE STEPS*/
     $(document).on('click', '.number[removable]', function () {
         if($(this).parent().next().attr('type') == 'submit') {
@@ -33,3 +36,4 @@ $(document).ready(function () {
     })
 /* END of JS code*/
 })
+

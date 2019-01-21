@@ -107,3 +107,23 @@ $(document).ready(function(){
 <?php 
 include '../components/footer.php';
 ?>
+
+
+
+
+<div step="1" class="parent-1">
+    <p class="enfant-1"></p>
+    <p class="enfant-2"></p>
+    <p class="enfant-3"></p>
+</div>
+<div class="parent-2">
+    <p class="enfant-1"></p>
+    <p class="enfant-2"></p>
+    <p class="enfant-3"></p>
+</div>
+<div class="parent-3">
+    <p class="enfant-1"></p>
+    <p class="enfant-2"></p>
+    <p class="enfant-3"></p>
+</div>
+<button type="submit"></button>

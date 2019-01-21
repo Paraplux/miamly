@@ -25,9 +25,8 @@ if(isset($_POST)) {
             ':pseudo' => $_POST['pseudo'],
             ':password' => $password,
         ));
-        $_SESSION['utilisateur'] = $utilisateur;
-        $_SESSION['toast']['success']['sign'] = "Vous êtes inscrit et connecté";
-        header('Location: ../views/account.php');
+        $_SESSION['toast']['success']['sign'] = "Vous êtes inscrit";
+        header('Location: ../views/login.php');
         exit();
     }
 }
