@@ -9,10 +9,10 @@ if (session_status() == PHP_SESSION_NONE) {
 include '../components/header.php';
 include '../components/navbar.php';
 
-// TEMPORAIRE
+// TEMPORAIRE HISTOIRE D'AVOIR UN CONTENU
 require '../components/db.php';
 
-$sql = 'SELECT r_id, r_nom, r_content, r_date, r_type, r_createur, r_date, r_difficulte, r_duree, p_link
+$sql = 'SELECT r_id, r_nom, r_content, r_date, r_type, r_createur, r_date, r_difficulte, r_duree
         FROM mly_recettes
         INNER JOIN mly_photos ON r_id = p_recette_id
         WHERE r_id = 15
@@ -20,8 +20,12 @@ $sql = 'SELECT r_id, r_nom, r_content, r_date, r_type, r_createur, r_date, r_dif
 
 $req = $pdo->prepare($sql);
 $req->execute();
-
 $data = $req->fetch();
+$req->closeCursor();
+
+$req = $pdo->prepare('SELECT p_link FROM mly_photos WHERE p_recette_id = 15');
+$req->execute();
+$thumbs = $req->fetchAll();
 $req->closeCursor();
 // /TEMPORAIRE
 ?>
@@ -41,7 +45,9 @@ $req->closeCursor();
             </div>
         </div>
         <div class="main-carousel">
-            <div class="carousel-cell"><img src="<?= $data['p_link']; ?>" alt="Photo de <?= $data['r_nom']; ?>"></div>
+            <?php foreach($thumbs as $thumb) : ?>
+            <div class="carousel-cell"><img src="<?= $thumb['p_link']; ?>" alt="Photo de <?= $data['r_nom']; ?>"></div>
+            <?php endforeach; ?>
         </div>
         <div class="main-content-step">
             <ol>
@@ -91,10 +97,10 @@ $req->closeCursor();
 <script>
 $(document).ready(function(){
     $('.main-carousel').flickity({
-  // options
-  wrapAround: true,
-  imageLoaded: true
-});
+        // options
+        wrapAround: true,
+        imageLoaded: true
+    });
 })
 </script>
 

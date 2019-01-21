@@ -14,8 +14,24 @@ include '../components/navbar.php';
 
 <div class="account">
     <div class="informations">
+        <h2>Modifier votre mot de passe</h2>
+
+        <form class="mly-form" action="">
+            <label for="">Ancien mot de passe :</label><br>
+            <input name="password_old" type="password"><br>
+
+            <label for="">Nouveau mot de passe :</label><br>
+            <input name="password_new" type="password"><br>
+
+            <label for="">Confirmation du mot de passe :</label><br>
+            <input name="password_confirmation" type="password"><br>
+        </form>
+
+        <br> <br> <hr> <br>
+
         <h2>Vos informations</h2>
         <form class="mly-form" action="../actions/action-informations.php" method='POST'>
+
             <label for="">Votre adresse mail :</label><br>
             <input name="email" type="email" 
             value="<?= isset($_SESSION['utilisateur']) ? $_SESSION['utilisateur']['u_email'] : "";?>"><br>
@@ -24,14 +40,9 @@ include '../components/navbar.php';
             <input name="pseudo" type="text" 
             value="<?=isset($_SESSION['utilisateur']) ? $_SESSION['utilisateur']['u_pseudo'] : "";?>"><br>
 
-            <label for="">Nouveau mot de passe :</label><br>
-            <input name="password" type="password"><br>
-
             <label for="">Votre avatar :</label><br>
             <input type="text" 
             value="<?=isset($_SESSION['utilisateur']) ? $_SESSION['utilisateur']['u_avatar'] : "";?>"><br>
-
-            <br> <br> <br>
 
             <label for="">Votre prénom :</label><br>
             <input name="prenom" type="text" 
@@ -61,6 +72,7 @@ include '../components/navbar.php';
 
         </form>
         <a href="./logout.php">Se déconnecter</a>
+        
     </div>
     <div class="add-recette">
         <h2>Proposer une recette</h2>
