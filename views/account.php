@@ -28,7 +28,7 @@ include '../components/navbar.php';
             <label for="">Votre avatar :</label><br>
             <input name="avatar" type="file"><br>
             <div>Avatar actuel :</div><br>
-            <img src="<?= $_SESSION['utilisateur']['u_avatar'] ?>" alt=""><br><br><br>
+            <img class="avatar" src="<?= $_SESSION['utilisateur']['u_avatar'] ?>" alt=""><br><br><br>
 
             <label for="">Votre prénom :</label><br>
             <input name="prenom" type="text" 

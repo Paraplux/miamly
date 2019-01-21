@@ -39,7 +39,7 @@
                 } else {
                     $account = "../views/login.php";
                 }
-                if($_SESSION['utilisateur']['u_avatar'] != NULL) {
+                if(isset($_SESSION['utilisateur']) && $_SESSION['utilisateur']['u_avatar'] != NULL) {
                     $avatar = '<img class="avatar" src="' . $_SESSION['utilisateur']['u_avatar'] . '" alt="">';
                 } else {
                     $avatar = '<i class="fas fa-user"></i>';
@@ -74,7 +74,7 @@
 
         <!-- POP UP ACCOUNT -->
         <div class="popup">
-            
+
         </div>
     </nav>
 </header>

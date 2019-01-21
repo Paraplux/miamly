@@ -28,7 +28,7 @@ include '../components/navbar.php';
             </div>
             
             <div class="form-group">
-                <label for="">Difficulté : </label><br>
+                <label for="">Difficulté : <span id="difficulteValue">5</span>/10 </label><br>
                 <input name="difficulte" type="range" min="1" max="10"><br>
             </div>
     
@@ -44,6 +44,12 @@ include '../components/navbar.php';
             <div class="form-group">
                 <label for="">Proposer en tant que : </label><br>
                 <input name="createur" readonly type="text" value="<?= $_SESSION['utilisateur']['u_pseudo'] ?>"><br>
+            </div>
+            <div class="tags">
+                <label for="">Tags :</label><br>
+                <div class="validated-tags"><span>chocolat<i class="fas fa-times removetag"></i></span></div>
+                <input id="taginput" name="tags" type="text">
+                <button id="addtag">Ajouter un tag</button>
             </div>
         </div>
 
@@ -67,7 +73,7 @@ include '../components/navbar.php';
     </form>
 </div>
 
-    <script src="../js/account.js"></script>
+    <script src="../js/addrecette.js"></script>
 <?php 
 include '../components/footer.php';
 ?>

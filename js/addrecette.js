@@ -1,4 +1,7 @@
 $(document).ready(function () {
+        /****************************/
+        /******CHAMP DYNAMIQUE*******/
+        /****************************/
     /*RESET THE CONTAINER WITH THE GOOD NUMBER*/
     function resetContainer() {
         i = 1
@@ -33,6 +36,34 @@ $(document).ready(function () {
             resetContainer()
     })
 
+        /****************************/
+        /****DIFFICULTE DYNAMIQUE****/
+        /****************************/
+    $(document).on('change', 'input[name="difficulte"]', function(){
+        $('#difficulteValue').html($(this).val())
+    })
+
+        /****************************/
+        /****INGREDIENT DYNAMIQUE****/
+        /****************************/
+    function addTag() {
+        var tag = $('#taginput').val()
+        $('.validated-tags').append('<span>' + tag + '<i class="fas fa-times removetag"></i></span>')
+        $('#taginput').val('')
+    }
+    $(document).on('click', '#addtag', function(e){
+        addTag()
+        e.preventDefault();
+    })
+    $(document).on('keypress', '#taginput', function(e){
+        if(e.which == 13) {
+            addTag()
+            e.preventDefault()
+        }
+    })
+    $(document).on('click', '.removetag', function(){
+        $(this).parent().remove()
+    })
     
 /* END of JS code*/
 })
