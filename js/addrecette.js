@@ -48,15 +48,17 @@ $(document).ready(function () {
         /****************************/
     function addTag() {
         var tag = $('#taginput').val()
-        $('.validated-tags').append('<span>' + tag + '<i class="fas fa-times removetag"></i></span>')
-        $('#taginput').val('')
+        if(tag != '') {
+            $('.validated-tags').append('<span>' + tag + '<i class="fas fa-times removetag"></i></span>')
+            $('#taginput').val('')
+        }
     }
     $(document).on('click', '#addtag', function(e){
         addTag()
         e.preventDefault();
     })
     $(document).on('keypress', '#taginput', function(e){
-        if(e.which == 13) {
+        if (e.which == 13 || e.which == 44) {
             addTag()
             e.preventDefault()
         }
