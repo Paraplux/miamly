@@ -23,7 +23,7 @@
             <div class="nav-items center-nav">
                 <a class="desktop-link" href="../views/recette">Recette</a>
                 <a class="desktop-link" href="../views/ajouts">Derniers ajouts</a>
-                <a class="desktop-link" href="">Mardi Gras</a>
+                <a class="desktop-link" href="../views/communaute">Recettes communautaires</a>
             </div>
             <div class="nav-search-bar center-nav">
                 <form class="nav-search-input" action="../actions/action-search.php" method="GET">

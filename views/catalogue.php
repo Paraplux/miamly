@@ -41,7 +41,7 @@ include '../components/navbar.php';
                         <h2><?= $recette["r_nom"] ?></h2>
                     </div>
                     <div class="card-text">
-                        <p><?= $recette["r_content"] ?>[...]</p>
+                        <p><?= $recette["r_content"] ?></p>
                     </div>
                 </div>
                 <div class="card-footer">

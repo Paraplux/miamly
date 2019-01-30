@@ -1,6 +1,6 @@
 <?php
 require '../components/db.php';
-$idRecette = $_GET['r'];
+$idRecette = isset($_GET['r']) ? $_GET['r'] : "1";
 $sql = "SELECT r_id, r_nom, r_content, r_date, r_type, r_createur, r_date, r_difficulte, r_duree
         FROM mly_recettes
         INNER JOIN mly_photos ON r_id = p_recette_id
