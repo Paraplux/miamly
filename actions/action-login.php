@@ -1,6 +1,6 @@
 <?php 
 
-if (session_status() == PHP_SESSION_NONE) {
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
@@ -20,6 +20,7 @@ if (isset($_POST)) {
             ':login' => $_POST['login'],
         ));
         $utilisateur = $req->fetch();
+        $req->closeCursor();
         if($utilisateur == null){
             $_SESSION['toast']['erreur']['password'] = "Vos informations de connexion sont incorrects";
             header('Location: ../views/login.php');

@@ -55,17 +55,47 @@ $(document).ready(function(){
     })
 
     
+
     $(document).on('click',function(){
+        var popupState = $('.popup').css('display')
         var headerPosition = $('header').css('transform')
-        
-        
         if (headerPosition == 'matrix(1, 0, 0, 1, 0, 0)') {
             $('header').css({
                 'transform': 'translateY(-200px)'
             });
         } 
+
+        if(popupState == 'flex') {
+            $('.popup').fadeOut()
+            $('.popup::before').fadeOut()
+        }
         
     })
 
-    
+    /*POPUP*/
+    function popupFade(e) {
+        var popupState = $('.popup').css('display')
+        if (popupState == 'none') {
+            $('.popup').fadeIn()
+            $('.popup::before').fadeIn()
+            $('.popup').css('display', 'flex')
+            e.stopPropagation()
+        } else if (popupState == 'flex') {
+            $('.popup').fadeOut()
+            $('.popup::before').fadeOut()
+            e.stopPropagation()
+        }
+        
+    }
+
+    $(document).on('click', '.toggle-popup', function(e){
+        var headerPosition = $('header').css('transform')
+        if (headerPosition == 'matrix(1, 0, 0, 1, 0, 0)') {
+            setTimeout(popupFade, 500)
+            $('header').css({'transform': 'translateY(-200px)'});
+        } else {
+            popupFade(e)
+        }
+    })
+
 })

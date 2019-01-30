@@ -8,7 +8,7 @@ if(isset($_POST)) {
 
     require '../components/db.php';
     require '../components/class.upload.php';
-    if(!empty($_FILES['avatar'])) {
+    if(empty($_POST['avatar_old'])) {
         $avatar = new Upload($_FILES['avatar']);
             if ($avatar->uploaded) {
                 $avatarsha1 = 'avatar_' . sha1(base64_encode(openssl_random_pseudo_bytes(30)));
@@ -24,7 +24,27 @@ if(isset($_POST)) {
                     $avatar->Clean();
                 }
             }
+    } else if (isset($_FILES['avatar']) && $_FILES['avatar'] != $_SESSION['utilisateur']['u_avatar']){
+        unlink($_POST['avatar_old']);
+        $avatar = new Upload($_FILES['avatar']);
+            if ($avatar->uploaded) {
+                $avatarsha1 = 'avatar_' . sha1(base64_encode(openssl_random_pseudo_bytes(30)));
+                $avatar->file_new_name_body = $avatarsha1;
+                $avatar->image_resize = true;
+                $avatar->image_x = 160;
+                $avatar->image_y = 160;
+                $avatar->image_convert = 'jpg';
+                $avatar->image_ratio_crop = true;
+                $avatar->Process('../images/avatars');
+                $avatarlink = '../images/avatars/' . $avatarsha1 . '.jpg';
+                if ($avatar->processed) {
+                    $avatar->Clean();
+                }
+            }
+    } else {
+        $avatarlink = $_POST['avatar_old'];
     }
+        
 
     $sql = "UPDATE mly_utilisateurs
             SET u_pseudo = :pseudo,

@@ -28,8 +28,13 @@ include '../components/navbar.php';
             <label for="">Votre avatar :</label><br>
             <input name="avatar" type="file"><br>
             <div>Avatar actuel :</div><br>
-            <img class="avatar" src="<?= $_SESSION['utilisateur']['u_avatar'] ?>" alt=""><br><br><br>
-
+            <input name="avatar_old" type="hidden" value="<?= isset($_SESSION['utilisateur']['u_avatar']) ? $_SESSION['utilisateur']['u_avatar'] : "" ?>">
+            <?php if(!empty($_SESSION['utilisateur']['u_avatar'])) : ?>
+            <img class="avatar" src="<?= $_SESSION['utilisateur']['u_avatar'] ?>" alt="">
+            <?php else : ?>
+            <p>AUCUN</p>
+            <?php endif;?>
+            <br><br><br>
             <label for="">Votre prénom :</label><br>
             <input name="prenom" type="text" 
             value="<?=isset($_SESSION['utilisateur']) ? $_SESSION['utilisateur']['u_prenom'] : "";?>"><br>

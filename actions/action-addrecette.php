@@ -57,9 +57,10 @@ if(isset($_POST)){
                 $thumbsha1 = 'thumb_' . sha1(base64_encode(openssl_random_pseudo_bytes(30)));
                 $thumb->file_new_name_body = $thumbsha1;
                 $thumb->image_resize = true;
-                $thumb->image_x = 400;
+                $thumb->image_x = 640;
+                $thumb->image_y = 480;
                 $thumb->image_convert = 'jpg';
-                $thumb->image_ratio_y = true;
+                $thumb->image_ratio_crop = true;
                 $thumb->Process('../images/thumbs/recettes');
                 $thumblink = '../images/thumbs/recettes/' . $thumbsha1 . '.jpg';
                 if ($thumb->processed) {

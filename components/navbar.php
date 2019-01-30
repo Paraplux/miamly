@@ -34,18 +34,13 @@
             <div class="nav-right-icons">
                 <i class="fas fa-search toggle-search-bar"></i>
                 <?php
-                if(isset($_SESSION['utilisateur'])) {
-                    $account = "../views/account.php";
-                } else {
-                    $account = "../views/login.php";
-                }
                 if(isset($_SESSION['utilisateur']) && $_SESSION['utilisateur']['u_avatar'] != NULL) {
                     $avatar = '<img class="avatar" src="' . $_SESSION['utilisateur']['u_avatar'] . '" alt="">';
                 } else {
                     $avatar = '<i class="fas fa-user"></i>';
                 }
                 ?>
-                <a  href=<?= $account; ?>><?= $avatar; ?></a>
+                <div class="toggle-popup"><?= $avatar; ?></div>
             </div>
         </div>
                 
@@ -73,10 +68,18 @@
         </div>
 
         <!-- POP UP ACCOUNT -->
-        <div class="popup">
-
-        </div>
+        
     </nav>
 </header>
+<div class="popup">
+    <?php if(isset($_SESSION['utilisateur'])) : ?>
+    <a href="../views/addrecette.php">Ajouter une recette</a>
+    <a href="../views/account.php">Mon compte</a>
+    <a href="../views/logout.php">Se déconnecter</a>
+    <?php else : ?>
+    <a href="../views/login.php">Se connecter</a>
+    <a href="../views/sign.php">Créer un compte</a>
+    <?php endif ; ?>
+</div>
 <div class="header-fix"></div>
     

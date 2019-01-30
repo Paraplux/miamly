@@ -160,6 +160,10 @@ header a {
     width: 45px;
     border: 2px solid @yellow-1;
     }
+
+    .avatar:hover {
+        cursor: pointer;
+    }
 }
 
 .nav-right-icons .fas {
@@ -205,7 +209,7 @@ header a {
     display: flex;
     align-items: center;
     border-radius: 10px;
-    background-color: #FFC33C50;
+    background-color: darken(@yellow-1, 10%);
     
     input {
         width: 100%;
@@ -243,6 +247,44 @@ header a {
 }
 
 /*GESTION DE LA POPUP*/
+.popup {
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    width: 175px;
+    height: 100px;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    box-shadow: 0 0px 10px rgba(@dark, 0.45);
+    background-color: rgba(@light, 0.95);
+    border-radius: 16px;
+
+    z-index: 10;
+}
+
+.popup a {
+    color: @dark;
+    text-decoration: none;
+}
+
+.popup a:hover {
+    color: darken(@yellow-1, 10%);
+}
+
+.popup::before{
+	content : '';
+	position : absolute;
+	border-bottom : 10px solid rgba(@light, 0.95);
+	border-left : 20px solid transparent;
+    border-right : 20px solid transparent;
+	top: -10px;
+	left: 85px;
+}
+
 
 @media all and (max-width: 768px) {
     .header-fix {
