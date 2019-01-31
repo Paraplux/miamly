@@ -62,11 +62,7 @@ include '../models/model-recette.php';
         <h2 class="side-content-subtitle">Récapitulatif</h2>
         <div class="side-content-ingr">
             <ul>
-                <li>Ingrédient 1</li>
-                <li>Ingrédient 2</li>
-                <li>Ingrédient 3</li>
-                <li>Ingrédient 4</li>
-                <li>Ingrédient 5</li>
+               <?= $data['r_ingredients'] ?>
             </ul>
         </div>
         <div class="side-content-infos">

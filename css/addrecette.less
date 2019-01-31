@@ -48,28 +48,28 @@
 
 /*STEP BY STEP STYLE*/
 
-.step-container {
+.step-container, .ing-container {
     width: 85%;
     margin:auto;
     display: flex;
     position: relative;
 
-    .number {
+    .step-number, .ing-number {
         width: 10%;
         left: 0;
         font-weight: bold;
     }
-    .step {
+    .step, .ing {
         width: 70%;
         font-size: 1.1rem;
         font-family: sans-serif;
         padding: 10px;
     }
-    .more {
+    .step-more, .ing-more {
         width: 10%;
         right:0;
     }
-    .number, .more {
+    .step-number, .step-more, .ing-number, .ing-more {
         position: absolute;
         top: 50%;
 
@@ -84,11 +84,11 @@
 
         transform: translateY(-50%)
     }
-    .number:hover, .more:hover {
+    .step-number:hover, .step-more:hover, .ing-number:hover, .ing-more:hover {
         cursor: pointer;
         background-color: lighten(@yellow-1, 10%);
     }
-    .number:active, .more:active {
+    .step-number:active, .step-more:active, .ing-number:active, .ing-more:active {
         background-color: darken(@yellow-1, 10%);
     }
     

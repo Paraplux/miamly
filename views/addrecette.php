@@ -47,23 +47,35 @@ include '../components/navbar.php';
             </div>
             <div class="tags">
                 <label for="">Tags :</label><br>
-                <div class="validated-tags"><span>chocolat<i class="fas fa-times removetag"></i></span></div>
-                <input id="taginput" name="tags" type="text">
+                <div class="validated-tags"></div>
+                <input id="taginput" name="taginput" type="text">
                 <button id="addtag">Ajouter un tag</button>
             </div>
         </div>
 
         <div class="deroulerecette">
+
             <label for="">Ajoutez des photos à votre recette :</label><br>
             <input name="photos[]" type="file" multiple><br>
     
+            <label for="">Listez ici les ingrédients :</label><br>
+            <div class="ing-container">
+                <div class="ing-number" step=1>
+                    1
+                </div>
+                <input name="ing[]" class="ing">
+                <div class="ing-more" step=1>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+
             <label for="">Déroulé de la recette</label><br>
             <div class="step-container">
-                <div class="number" step=1>
+                <div class="step-number" step=1>
                     1
                 </div>
                 <textarea name="step[]" class="step"></textarea>
-                <div class="more" step=1>
+                <div class="step-more" step=1>
                     <i class="fas fa-plus"></i>
                 </div>
             </div>

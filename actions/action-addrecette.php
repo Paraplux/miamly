@@ -18,10 +18,17 @@ if(isset($_POST)){
             $content .= "<li>" . $step . "</li>";
         }
 
+        /*Récupération des ingrédients de la recette + transformation en liste*/
+        $ingredients = "";
+        foreach($_POST['ing'] as $ing) {
+            $ingredients .= "<li>" . $ing . "</li>";
+        }
+
         /*Requête pour l'insertion de la recette*/
-        $req = $pdo->prepare("INSERT INTO mly_recettes SET r_nom = :nom, r_content = :content, r_type = :typerecette, r_date = :created_at, r_difficulte = :difficulte, r_duree = :duree, r_createur = :createur");
+        $req = $pdo->prepare("INSERT INTO mly_recettes SET r_nom = :nom, r_ingredients = :ing, r_content = :content, r_type = :typerecette, r_date = :created_at, r_difficulte = :difficulte, r_duree = :duree, r_createur = :createur");
         $params = array(
             ':nom' => $_POST['nom'],
+            ':ing' => $ingredients,
             ':content' => $content,
             ':typerecette' => $_POST['typerecette'],
             ':created_at' => date('Y-m-d'),
@@ -74,8 +81,22 @@ if(isset($_POST)){
                 }
             }
         }
+
+        /*Requête pour l'insertion des tags*/
+        foreach($_POST['tags'] as $tag) {
+            $req = $pdo->prepare('INSERT INTO mly_tags SET t_nom = :tag, t_recette_id = :recette_id');
+                    $req->execute(array(
+                        ':tag' => $tag,
+                        ':recette_id' => $data['r_id']
+                    ));
+                    $req->closeCursor();
+        }
+        
+        /*Messages toast et redirection*/
         $_SESSION['toast']['success']['addrecette'] = 'La recette a bien été ajouté !';
         header('Location: ../views/account.php');
     }
 }
+
+
 

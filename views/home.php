@@ -6,6 +6,7 @@ session_start();
 
 include '../components/header.php';
 include '../components/navbar.php';
+require '../models/model-home.php';
 ?>
 
 <link rel="stylesheet/less" href="../css/home.less">
@@ -22,22 +23,17 @@ include '../components/navbar.php';
 
     <div class="random-tiles">
         <h3 class="tiles-title">Jetez un oeil à nos recettes : </h3>
-        <img class="tiles" src="../images/thumbs/recettes/brownie.jpg">
-        <img class="tiles" src="../images/thumbs/recettes/pate.jpg">
-        <img class="tiles" src="../images/thumbs/recettes/champ.jpg">
-        <img class="tiles" src="../images/thumbs/recettes/tartiflette.jpg">
-        <img class="tiles" src="../images/thumbs/recettes/brownie.jpg">
-        <img class="tiles" src="../images/thumbs/recettes/pate.jpg">
-        <img class="tiles" src="../images/thumbs/recettes/brownie.jpg">
-        <img class="tiles" src="../images/thumbs/recettes/tartiflette.jpg">
+        <?php for ($i=0; $i < 8; $i++) : ?>
+        <a class="tiles" href="./recette?r=<?= $home[$i]['r_id']?>"><img src="<?= $home[$i]['p_link']?>" alt=""></a>
+        <?php endfor; ?>
     </div>
 
     <div class="newsletter">
         <h3 class="newsletter-title">Inscrivez vous à la newsletter : </h3>
-        <form action="">
+        <form action="../actions/action-newsletter.php" method='POST'>
             <div class="newsletter-group">
-                <input type="email" placeholder="Entrez votre adresse mail...">
-                <button class="btn-home" type="submit">S'inscrire</button>
+                <input name="email" type="email" placeholder="Entrez votre adresse mail...">
+                <button name="submit" class="btn-home" type="submit">S'inscrire</button>
             </div>
         </form>
         <div class="newsletter-text">

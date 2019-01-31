@@ -64,7 +64,14 @@
                 <div class="mobile-search-close"><i class="fas fa-times"></i></div>
             </div>
             <i class=" mobile-button fas fa-search toggle-mobile-search-bar"></i>
-            <a class="mobile-button" href="../views/account.php"><i class="fas fa-user"></i></a>
+            <?php
+                if(isset($_SESSION['utilisateur']) && $_SESSION['utilisateur']['u_avatar'] != NULL) {
+                    $avatar = '<img class="avatar" src="' . $_SESSION['utilisateur']['u_avatar'] . '" alt="">';
+                } else {
+                    $avatar = '<i class="fas fa-user"></i>';
+                }
+                ?>
+                <div class="toggle-popup"><?= $avatar; ?></div>
         </div>
 
         <!-- POP UP ACCOUNT -->

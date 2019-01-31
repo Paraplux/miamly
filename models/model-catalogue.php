@@ -14,7 +14,7 @@ foreach ($currentSearch as $keyword) {
 
 $subSql = 'SELECT MAX(p_id) AS p_id, MAX(p_link) AS p_link, p_recette_id FROM mly_photos GROUP BY p_recette_id';
 
-$sql = "SELECT * FROM mly_recettes INNER JOIN ($subSql) AS sub ON sub.p_recette_id = r_id WHERE " . implode('OR', $sqlSearch);
+$sql = "SELECT * FROM mly_recettes INNER JOIN ($subSql) AS sub ON sub.p_recette_id = r_id WHERE " . implode('OR', $sqlSearch) . " AND r_officielle = 'true'";
 
 $req = $pdo->prepare($sql);
 $req->execute();
