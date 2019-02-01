@@ -14,7 +14,9 @@ include '../models/model-recette.php';
 <link rel="stylesheet/less" href="../css/recette.less">
 
 <div class="container">
-
+    <?php if(!$data) : ?>
+    <h1>Erreur</h1>
+    <?php else : ?>
     <div class="main-content">
         <div class="main-content-header">
             <h1 class="main-content-title"><?= $data['r_nom']; ?></h1>
@@ -70,7 +72,7 @@ include '../models/model-recette.php';
         </div>
         <div class="side-content-signature"><?= $data['r_date']; ?> / <?= $data['r_createur']; ?></div>
     </div>
-
+    <?php endif; ?>
 </div>
 
 <?php 

@@ -12,8 +12,13 @@ $req->execute();
 $data = $req->fetch();
 $req->closeCursor();
 
-$req = $pdo->prepare("SELECT p_link FROM mly_photos WHERE p_recette_id = $idRecette");
-$req->execute();
-$thumbs = $req->fetchAll();
-$req->closeCursor();
+if(!$data) {
+    echo '<script> window.location.href = "../views/home"</script>';
+} else {
+	$req = $pdo->prepare("SELECT p_link FROM mly_photos WHERE p_recette_id = $idRecette");
+    $req->execute();
+    $thumbs = $req->fetchAll();
+    $req->closeCursor();
+}
+
 
