@@ -8,6 +8,10 @@ $req->execute(array(
 $d = $req->fetch();
 $compare = $d['u_votes_history'];
 
+if($compare === "") {
+    $compare = "0";
+}
+
 //Récupération des recettes de communauté pour lesquelle l'utilisateur n'a pas voté
 $req = $pdo->prepare("SELECT r_id, r_nom, r_duree, r_content, r_ingredients, r_difficulte, r_date, r_type, p_link, r_votes FROM mly_recettes INNER JOIN mly_photos ON r_id = p_recette_id WHERE r_officielle = 'false' AND r_id NOT IN ($compare) GROUP BY r_id, p_link");
 $req->execute();

@@ -7,6 +7,7 @@ foreach ($currentSearch as $keyword) {
         $arraySearch[] = '
         r_nom LIKE "%' . $keyword . '%"
         OR r_content LIKE "%' . $keyword . '%"
+        OR r_ingredients LIKE "%' . $keyword . '%"
         OR r_duree LIKE "%' . $keyword . '%"
         OR r_createur LIKE "%' . $keyword . '%"
         ';
@@ -24,9 +25,7 @@ $recettes = $req->fetchAll();
 
 $req->closeCursor();
 
-if(!$recettes) {
-    echo '<script> window.location.href = "../views/home"</script>';
-}
+
 
 //Gestion favoris
     $req = $pdo->prepare('SELECT u_fav FROM mly_utilisateurs WHERE u_id = :logged_id');
@@ -36,5 +35,9 @@ if(!$recettes) {
     $d = $req->fetch();
 
     $fav = explode(',' , $d['u_fav']);
+
+    //Variable titre 
+
+    $titre = "Voici les résultats de votre recheche :"
     
 ?>

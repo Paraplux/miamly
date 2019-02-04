@@ -12,6 +12,18 @@ if (session_status() == PHP_SESSION_NONE) {
 
 include '../components/header.php';
 include '../components/navbar.php';
+
+if(isset($_GET['search'])) {
+
+    require '../models/model-search.php';
+    
+} else if (isset($_GET['choix'])) {
+    
+    require '../models/model-choix.php';
+
+} else {
+    echo '<script> window.location.href = "../views/home"</script>';
+}
 ?>
 <link rel="stylesheet/less" href="../css/catalogue.less">
 <link rel="stylesheet/less" href="../css/cards.less">
@@ -28,23 +40,33 @@ Si get'choix' on regarde le paramètre
 -->
 <div class="catalogue">
     <?php
-    include '../models/model-catalogue.php';
+    if(!$recettes) {
+    echo '<br>';
+    echo "<h3 class='catalogue-titre'>Votre recherche n'a donné aucun résultat </h3>";
+    } else {
+        echo "<h3 class='catalogue-titre'>$titre </h3>";
+    }
     foreach ($recettes as $recette) :
     if(!$fav || !in_array($recette['r_id'], $fav)) {
         $isFav = "";
     } else {
         $isFav = 'isFav';
     }
+    if(isset($_GET['search'])) {
+        $value = $_GET['search'];
+    } else if (isset($_GET['choix'])) {
+        $value = $_GET['choix'];
+    }
     ?>
-        <a href="./recette?r=<?= $recette['r_id'] ?>">
+        <a href="../views/recette?r=<?= $recette['r_id']; ?>">
             <div class="card" type="<?= $recette['r_type']; ?>">
                 <div class="card-thumb">
                     <img src="<?= $recette["p_link"] ?>" alt="test">
                     <div class="card-thumb-fav <?= $isFav ?>">
-                        <form id="fav-form" action="../actions/action-favoris.php" method="POST">
+                        <form class="fav-form" action="../actions/action-favoris.php" method="POST">
                             <input name="current_recette" type="hidden" value="<?= $recette['r_id'] ?>">
-                            <input name="from" type="hidden" value="<?= $_GET['search'] ?>">
-                            <span name="submit-fav" type="submit" id="fav-check" class="fav-checkbox-icon <?= $isFav ?>"><i class="far fa-heart"></i></span>
+                            <input name="from" type="hidden" value="<?= $value ?>">
+                            <span name="submit-fav" type="submit" class="fav-check fav-checkbox-icon <?= $isFav ?>"><i class="far fa-heart"></i></span>
                         </form>
                     </div>
                 </div>
@@ -76,10 +98,9 @@ Si get'choix' on regarde le paramètre
 <!-- /CARDS -->
 
 <script>
-var formFav = document.querySelector('#fav-form')
-document.querySelector('#fav-check').addEventListener('click', function(e) {
+$('.fav-form').on('click', function(e) {
     e.preventDefault()
-    formFav.submit()
+    this.submit()
 })
 </script>
 

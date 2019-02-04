@@ -6,20 +6,35 @@ if (session_status() === PHP_SESSION_NONE) {
 require '../components/db.php';
 
 //TEMPORAIRE affichange de la recette 1 par défaut (voir comment faire)
-$idRecette = isset($_GET['r']) ? $_GET['r'] : "1";
-
-
-//Récupération des informations globales des recettes
-$sql = "SELECT r_id, r_nom, r_ingredients, r_content, r_date, r_type, r_createur, r_date, r_difficulte, r_duree
+if(isset($_GET['r'])) {
+    $idRecette = $_GET['r'];
+    //Récupération des informations globales des recettes
+    $sql = "SELECT r_id, r_nom, r_ingredients, r_content, r_date, r_type, r_createur, r_date, r_difficulte, r_duree
         FROM mly_recettes
         INNER JOIN mly_photos ON r_id = p_recette_id
         WHERE r_id = $idRecette AND r_officielle = 'true'
         GROUP BY r_id, p_link";
 
-$req = $pdo->prepare($sql);
-$req->execute();
-$data = $req->fetch();
-$req->closeCursor();
+    $req = $pdo->prepare($sql);
+    $req->execute();
+    $data = $req->fetch();
+    $req->closeCursor();
+} else {
+    $sql = "SELECT r_id, r_nom, r_ingredients, r_content, r_date, r_type, r_createur, r_date, r_difficulte, r_duree
+        FROM mly_recettes
+        INNER JOIN mly_photos ON r_id = p_recette_id
+        WHERE r_officielle = 'true'
+        GROUP BY r_id, p_link";
+
+        $req = $pdo->prepare($sql);
+        $req->execute();
+        $data = $req->fetchAll();
+        shuffle($data);
+        $req->closeCursor();
+        $data = $data[0];
+        $idRecette = $data['r_id'];
+}
+
 
 //Ici on check s'il y a un résultat, sinon on redirige
 if(!$data) {

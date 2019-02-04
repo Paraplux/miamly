@@ -43,6 +43,16 @@ if(isset($_POST)) {
         if($_POST['from'] === 'recette'){
             $currentUrl = "../views/recette?r=$idRecette";
             header("Location: $currentUrl");
+        } else if ($_POST['from'] === 'easy') {
+            header("Location: ../views/catalogue?choix=easy");
+        } else if ($_POST['from'] === 'best') {
+            header("Location: ../views/catalogue?choix=best");
+        } else if ($_POST['from'] === 'rapide') {
+            header("Location: ../views/catalogue?choix=rapide");
+        } else if ($_POST['from'] === 'favoris') {
+            header("Location: ../views/catalogue?choix=favoris");
+        } else if ($_POST['from'] === 'top') {
+            header("Location: ../views/catalogue?choix=top");
         } else {
             $search = $_POST['from'];
             header("Location: ../views/catalogue?search=$search");

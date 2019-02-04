@@ -2,18 +2,18 @@
     <nav>
         <div class="hidden-nav">
             <div class="hidden-nav-column">
-                <a href="">Top 10 recettes</a>
-                <a href="">Mes favoris</a>
+                <a href="../views/catalogue?choix=top">Top 10 recettes</a>
+                <a href="../views/catalogue?choix=favoris">Mes favoris</a>
                 <a href="">Idée à mettre</a>
             </div>
             <div class="hidden-nav-column">
-                <a href="">C'est moi le meilleur</a>
-                <a href="">Je débute</a>
-                <a href="">Manger sur le pouce</a>
+                <a href="../views/catalogue?choix=best">C'est moi le meilleur</a>
+                <a href="../views/catalogue?choix=easy">Je débute</a>
+                <a href="../views/catalogue?choix=rapide">Manger sur le pouce</a>
             </div>
             <div class="hidden-nav-column">
                 <a href="">Les outils</a>
-                <a href="">Pané et frit</a>
+                <a href="../views/catalogue?search=pané+frit">Pané et frit</a>
                 <a href="https://www.neonmag.fr/content/uploads/2016/10/CHIEN3.gif" target="_blank">Vegge t'as rien</a>
             </div>
         </div>
