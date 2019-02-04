@@ -1,15 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Pangolin');
+
+.filter-blur {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
 .toast-container {
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 110%;
+    left: 50%;
     width: 35%;
-    border: 1px solid red;
+    padding: 0 50px;
+
+    font-family: 'Pangolin', sans-serif;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    transform: translateX(-50%);
+
+    animation-name: toast;
+    animation-duration: 800ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 
     .toast-content {
         display: flex;
+        align-items: center;
         img {
             width: 40%;
-            height: 50%;
+            height: 30%;
+            animation-name: mascotte;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-delay: 2s;
         }
 
         ul {
@@ -19,6 +48,7 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
+            background-color: #fff;
 
             .toast-dismiss {
                 position: absolute;
@@ -37,6 +67,12 @@
                 
                 border-radius: 100px;
                 background-color: #202020;
+
+                cursor: pointer;
+            }
+
+            li {
+                padding: 20px 10px;
             }
         }
     }
@@ -49,5 +85,44 @@
     }
     .toast-info {
         color: #000080;
+    }
+}
+
+@keyframes toast {
+    0% {
+        bottom: 110%;
+    }
+
+    60% {
+        bottom: 0%;
+    }
+    
+    80% {
+        bottom: 10%;
+    }
+
+    100% {
+        bottom: 5%;
+    }
+}
+
+@keyframes mascotte {
+    0% {
+        transform: rotate(0deg);
+    }
+    2% {
+        transform: rotate(15deg);
+    }
+    4% {
+        transform: rotate(0deg);
+    }
+    6% {
+        transform: rotate(-15deg);
+    }
+    8% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
     }
 }

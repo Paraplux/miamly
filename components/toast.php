@@ -1,46 +1,51 @@
-<?php include './header.php'; ?>
-
 <!-- MESSAGE TOAST -->
-<?php
-if(isset($_SESSION['toast'])):
-    foreach($_SESSION['toast'] as $type => $error): ?>
-    <div class="toast-message-<?= $type; ?>">
-        <div class="toast-message-dismiss"><i class="fas fa-times"></i></div>
-        <?php if(isset($_SESSION['toast']['fail'])) : ?>
-        <ul>
-            <?php foreach ($_SESSION['toast']['fail'] as $message) : ?>
-            <li> <?= $message ?> </li>
-            <?php endforeach;?>
-        </ul>
-        <?php endif ?>
-        <?php if (isset($_SESSION['toast']['success'])) : ?>
-        <ul>
-            <?php foreach ($_SESSION['toast']['success'] as $message) : ?>
-            <li> <?= $message ?> </li>
-            <?php endforeach; ?>
-        </ul>
-        <?php endif ?>
-    </div>
-    <?php
-    endforeach;
-    unset($_SESSION['toast']);
-endif;
-?>
-<!-- FIN MESSAGE TOAST -->
-
-
-<!-- TEST -->
 <link rel="stylesheet/less" href="../css/toast.less">
-<div class="toast-container">
-    <div class="toast-content toast-erreur">
-        <img src="../images/mascotte/mascotte2.svg" alt="">
-        <ul>
-            <span class="toast-dismiss"><i class="fas fa-times"></i></span>
-            <li>Erreur type 1</li>
-            <li>Erreur type 2</li>
-            <li>Erreur type 3</li>
-        </ul>
+<?php $_SESSION['toast']['success']['hello'] = "Coucou <br><br><br> CoucouCoucou <br><br><br> CoucouCoucou <br><br><br> Coucou" ?>
+<?php if(isset($_SESSION['toast'])) : ?>
+<div id="filter" class="filter-blur"></div>
+<div id="mascotte" class="toast-container">
+    <?php foreach($_SESSION['toast'] as $toast) :  ?>
+        <?php if(isset($_SESSION['toast']['erreur'])) : ?>
+        <div class="toast-content toast-erreur">
+            <img src="../images/mascotte/mascotte-erreur.svg" alt="">
+            <ul>
+                <span class="toast-dismiss"><i class="fas fa-times"></i></span>
+                <?php foreach ($_SESSION['toast']['erreur'] as $message) : ?>
+                    <li> <?= $message ?> </li>
+                <?php endforeach;?>
+            </ul>
+        </div>
+        <?php elseif(isset($_SESSION['toast']['success'])) : ?>
+        <div class="toast-content toast-success">
+            <img src="../images/mascotte/mascotte-success.svg" alt="">
+            <ul>
+                <span class="toast-dismiss"><i class="fas fa-times"></i></span>
+                <?php foreach ($_SESSION['toast']['success'] as $message) : ?>
+                    <li> <?= $message ?> </li>
+                <?php endforeach;?>
+            </ul>
+        </div>
+        <?php elseif(isset($_SESSION['toast']['info'])) : ?>
+        <div class="toast-content toast-info">
+            <img src="../images/mascotte/mascotte-info.svg" alt="">
+            <ul>
+                <span class="toast-dismiss"><i class="fas fa-times"></i></span>
+                <?php foreach ($_SESSION['toast']['info'] as $message) : ?>
+                    <li> <?= $message ?> </li>
+                <?php endforeach;?>
+            </ul>
+        </div>
+        <?php endif ?>
+    <?php endforeach;?>
     </div>
-</div>
+    <?php unset($_SESSION['toast']); ?>
+<?php endif; ?>
 
-<?php include './footer.php'; ?>
+<script>
+var mascotte = document.querySelector('#mascotte')
+var filter = document.querySelector('#filter')
+mascotte.addEventListener('click', function() {
+    this.style.display = "none"
+    filter.style.display = "none"
+})
+</script>
