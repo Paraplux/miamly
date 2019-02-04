@@ -22,7 +22,6 @@ if(isset($_POST)){
         $_SESSION['toast']['success']['password'] = "Le mot de passe a été changé avec success!";
         header('Location: ../views/account.php');
     } else {
-        $_SESSION['toast']['erreur']['password'] = "Erreur! Veuillez essayer à nouveau!";
         header('Location: ../views/account.php');
     }
 }

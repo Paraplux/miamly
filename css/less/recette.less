@@ -1,15 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Homemade+Apple|Indie+Flower|Reenie+Beanie|Pacifico');
-
-/*-----LESS VARIABLES-----*/
-@light : #FAFAFA;
-@dark: #404040;
-@blue-1 : #00C8F8;
-@blue-2 : #59C4C5;
-@yellow-1 : #FFC33C;
-@yellow-2 : #FBE2B4;
-@red : #FF4C65;
-
-
+/***RECETTE***/
 /*DISPOSITION DE LA PAGE*/
 
 .container {
@@ -59,7 +48,7 @@
     width: 80%;
     height: 80%;
     margin: 10%;
-    box-shadow: 0 0 12px #20202080;
+    box-shadow: 0 0 12px @dark;
     border-radius: 5px;
     border: 5px solid white;
 }
@@ -83,7 +72,7 @@
         color: @dark;
     }
     .fav-checkbox-icon.isFav {
-        color: red;
+        color: @red;
     }
 
 .comment-auteur {
@@ -93,7 +82,7 @@
 .comment-avatar {
     width: 75px;
     height: 75px;
-    border : 3px solid #ffc33c;
+    border : 3px solid @yellow-1;
     border-radius: 50px;
 }
 .comment-pseudo {
@@ -126,12 +115,12 @@
     width: 100%;
     padding: 10px;
 
-    border: 1px solid #ffc33c;
+    border: 1px solid @yellow-1;
     border-radius: 8px;
 }
 
 .comment-form textarea:focus {
-    border: 2px solid #ffc33c;
+    border: 2px solid @yellow-1;
     outline: none;
 }
 
@@ -139,9 +128,9 @@
     height: 35px;
     margin: 1rem auto;
     padding: 0 1rem;
-    border: 1px solid #ffc33c;
+    border: 1px solid @yellow-1;
     border-radius: 8px;
-    background-color: #ffc33c;
+    background-color: @yellow-1;
 }
 /*SIDE CONTENT*/
 

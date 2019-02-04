@@ -3,9 +3,6 @@ include '../components/header.php';
 include '../components/navbar.php';
 ?>
 
-<link rel="stylesheet/less" href="../css/sign.less">
-<link rel="stylesheet/less" href="../css/form.less">
-
 <div class="container">
     <section class="sign-page">
         

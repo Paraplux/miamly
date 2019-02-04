@@ -11,9 +11,6 @@ include '../components/navbar.php';
 include '../models/model-recette.php';
 ?>
 
-<link rel="stylesheet/less" href="../css/recette.less">
-<link rel="stylesheet" href="../css/carousel.css">
-<script src="../js/carousel.js" async></script>
 
 <div class="container">
     <?php if(!$data) : ?>
@@ -47,7 +44,7 @@ include '../models/model-recette.php';
             </ol>
         </div>
         <br><hr><br>
-        <div class="comment">
+        <div id="comment_anchor" class="comment">
             <h2 class="comment-subtitle">Commentaires</h2>
             <?php 
             if(!$commentaires) {

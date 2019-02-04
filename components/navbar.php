@@ -89,4 +89,7 @@
     <?php endif ; ?>
 </div>
 <div class="header-fix"></div>
+
+    <!-- *****DEBUT DU CORPS DU CODE***** -->
+    
     

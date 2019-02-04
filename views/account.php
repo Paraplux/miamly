@@ -9,9 +9,6 @@ include '../components/navbar.php';
 
 ?>
 
-<link rel="stylesheet/less" href="../css/form.less">
-<link rel="stylesheet/less" href="../css/account.less">
-
 <div class="account">
     <div class="informations">
         <h2>Vos informations</h2>

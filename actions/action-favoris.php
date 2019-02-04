@@ -39,6 +39,7 @@ if(isset($_POST)) {
             ':stringFav' => $stringFav
         ));
         $req->closeCursor();
+        $_SESSION['toast']['success']['favoris'] = 'La recette a bien été ajouté à vos favoris !';
         //Redirection
         if($_POST['from'] === 'recette'){
             $currentUrl = "../views/recette?r=$idRecette";

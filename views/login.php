@@ -3,9 +3,6 @@ include '../components/header.php';
 include '../components/navbar.php';
 ?>
 
-<link rel="stylesheet/less" href="../css/login.less">
-<link rel="stylesheet/less" href="../css/form.less">
-
     <section class="login-page">
         <h2>Connectez vous</h2>
 

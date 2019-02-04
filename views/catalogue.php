@@ -25,8 +25,8 @@ if(isset($_GET['search'])) {
     echo '<script> window.location.href = "../views/home"</script>';
 }
 ?>
-<link rel="stylesheet/less" href="../css/catalogue.less">
-<link rel="stylesheet/less" href="../css/cards.less">
+<link rel="stylesheet/less" href="../css/less/catalogue.less">
+<link rel="stylesheet/less" href="../css/less/cards.less">
 <!--
 Voir le $_GET
 Si get'search' = affichage des résultats de la recherche

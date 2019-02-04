@@ -28,5 +28,7 @@ if(isset($_POST)) {
         $_SESSION['toast']['success']['sign'] = "Vous êtes inscrit";
         header('Location: ../views/login.php');
         exit();
+    } else {
+        header('Location: ../views/login.php');
     }
 }

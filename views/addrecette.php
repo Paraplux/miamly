@@ -8,9 +8,6 @@ include '../components/navbar.php';
 
 
 ?>
-
-<link rel="stylesheet/less" href="../css/form.less">
-<link rel="stylesheet/less" href="../css/addrecette.less">
 <div class="add-recette">
     <form class="mly-form" action="../actions/action-addrecette.php" method="POST" enctype="multipart/form-data">
         <h2>Proposer une recette</h2>

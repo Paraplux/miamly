@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Pangolin');
-
+/***TOAST***/
 .filter-blur {
     position: fixed;
     top: 0;
@@ -14,7 +13,7 @@
     position: fixed;
     bottom: 110%;
     left: 50%;
-    width: 35%;
+    width: 40%;
     padding: 0 50px;
 
     font-family: 'Pangolin', sans-serif;
@@ -26,8 +25,9 @@
     animation-name: toast;
     animation-duration: 800ms;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
     animation-iteration-count: 1;
-
+    
     .toast-content {
         display: flex;
         align-items: center;
@@ -39,16 +39,21 @@
             animation-fill-mode: forwards;
             animation-iteration-count: infinite;
             animation-delay: 2s;
+            animation-play-state: paused;
         }
 
         ul {
             width: 60%;
+            margin: 20px 20px;
+            margin-right: 0;
+            padding: 10px 25px;
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             display: flex;
             justify-content: center;
             flex-direction: column;
-            background-color: #fff;
+            background-color: @light;
+            list-style-type: circle;
 
             .toast-dismiss {
                 position: absolute;
@@ -62,17 +67,16 @@
                 justify-content: center;
                 align-items: center;
                 
-                color: white; 
+                color: @light; 
                 font-size: 1.2rem;
                 
                 border-radius: 100px;
-                background-color: #202020;
+                background-color: @dark;
 
                 cursor: pointer;
             }
-
             li {
-                padding: 20px 10px;
+                padding: 0 20px;
             }
         }
     }

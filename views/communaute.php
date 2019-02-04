@@ -9,16 +9,12 @@ include '../components/navbar.php';
 include '../models/model-communaute.php';
 ?>
 <!-- CSS DE LA PAGE -->
-<link rel="stylesheet/less" href="../css/communaute.less">
-<link rel="stylesheet/less" href="../css/large-cards.less">
-<link rel="stylesheet/less" href="../css/scroll.less">
-<link rel="stylesheet" href="../css/carousel.css">
 
 <!-- JS DE DE LA PAGE -->
 <script src="../js/scroll.js"></script>
 <script src="../js/carousel.js" async></script>
 
-
+<?php if($dataUnvoted): ?>
 <h3 class="communaute-titre">Votez pour vos recettes préférées : </h3>
 <div class="carousel-communaute" id="carousel-unvoted">
 <?php foreach($dataUnvoted as $recette) : ?>
@@ -77,6 +73,8 @@ include '../models/model-communaute.php';
     </div>
     <?php endforeach; ?>
 </div>
+<?php endif; ?>
+<?php if($dataVoted): ?>
 <h3 class="communaute-titre">Voici les recettes pour lesquelles vous avez voté : </h3>
 <div class="carousel-communaute" id="carousel-voted">
 <?php foreach($dataVoted as $recette) : ?>
@@ -128,6 +126,7 @@ include '../models/model-communaute.php';
     </div>
     <?php endforeach; ?>
 </div>
+<?php endif; ?>
 
 <script>
 let onReady = function () {

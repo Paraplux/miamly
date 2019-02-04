@@ -9,8 +9,6 @@ include '../components/navbar.php';
 require '../models/model-home.php';
 ?>
 
-<link rel="stylesheet/less" href="../css/home.less">
-
     <div class="home-search">
         <h3 class="home-search-title">Aujourd'hui je cuisine...</h3>
         <form action="../actions/action-search.php" method="GET">

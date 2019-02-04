@@ -23,7 +23,10 @@ if(isset($_POST['submit'])) {
             ':current_utilisateur' => $idUtilisateur
         ));
         $_SESSION['toast']['success']['commentaire'] = "Votre commentaire a bien été ajouté!";
-        $currentUrl = "../views/recette?r=$idRecette";
+        $currentUrl = "../views/recette?r=$idRecette#comment_anchor";
+        header("Location: $currentUrl");
+    } else {
+        $currentUrl = "../views/recette?r=$idRecette#comment_anchor";
         header("Location: $currentUrl");
     }
 }

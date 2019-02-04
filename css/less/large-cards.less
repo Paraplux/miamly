@@ -1,19 +1,4 @@
-/*-----LESS VARIABLES-----*/
-@light : #FAFAFA;
-@dark: #404040;
-@blue-1 : rgba(0, 198, 248, 0.7);
-@blue-2 : rgba(89, 195, 197, 0.8);
-@yellow-1 : rgba(255, 196, 60, 0.8);
-@yellow-2 : #FBE2B4;
-@red : rgba(255, 76, 100, 0.7);
-
-* {
-    box-sizing: border-box;
-    /* border:1px solid red; */
-}
-
-/*CARD*/
-
+/***LARGE CARDS***/
 .large-card {
     position: relative;
     width: 100%;
@@ -28,9 +13,9 @@
     border-radius: 50px;
 
     overflow: hidden;
-    box-shadow: 0 0 7px #202020;
+    box-shadow: 0 0 7px @dark;
     /*tempo*/
-    color: black;
+    color: @dark;
 }
         .large-card img {
             object-fit: cover;
@@ -128,7 +113,7 @@
     align-items: center;
     text-align: center;
     padding: 0 5%;
-    background-color: #fff;
+    background-color: @light;
 
     .form-up, .form-down {
         width: 5%;

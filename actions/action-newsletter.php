@@ -1,5 +1,9 @@
 <?php 
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 if(isset($_POST['submit'])) {
 
     if(empty($_POST['email'])) {
@@ -27,5 +31,7 @@ if(isset($_POST['submit'])) {
             $_SESSION['toast']['succes']['newsletter'] = "Vous avez été inscrit avec succès à notre newsletter";
             header('Location: ../views/home.php');
         }
+    } else {
+        header('Location: ../views/home.php');
     }
 }

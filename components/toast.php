@@ -1,6 +1,4 @@
 <!-- MESSAGE TOAST -->
-<link rel="stylesheet/less" href="../css/toast.less">
-<?php $_SESSION['toast']['success']['hello'] = "Coucou <br><br><br> CoucouCoucou <br><br><br> CoucouCoucou <br><br><br> Coucou" ?>
 <?php if(isset($_SESSION['toast'])) : ?>
 <div id="filter" class="filter-blur"></div>
 <div id="mascotte" class="toast-container">
@@ -38,14 +36,19 @@
         <?php endif ?>
     <?php endforeach;?>
     </div>
+    
     <?php unset($_SESSION['toast']); ?>
+    <script>
+        var mascotte = document.querySelector('#mascotte')
+        var filter = document.querySelector('#filter')
+        var mascotteImg = document.querySelector('#mascotte img')
+        var mascotteClose = document.querySelector('#mascotte .toast-dismiss')
+        mascotteClose.addEventListener('click', function() {
+            mascotte.style.display = "none"
+            filter.style.display = "none"
+        })
+        mascotte.style.animationPlayState = "running"
+        mascotteImg.style.animationPlayState = "running"
+    </script>
 <?php endif; ?>
 
-<script>
-var mascotte = document.querySelector('#mascotte')
-var filter = document.querySelector('#filter')
-mascotte.addEventListener('click', function() {
-    this.style.display = "none"
-    filter.style.display = "none"
-})
-</script>

@@ -105,5 +105,6 @@ if(isset($_POST['up']) || isset($_POST['down'])) {
     ));
     $req->closeCursor();
     //Redirection
+    $_SESSION['toast']['success']['vote'] = "Votre vote a bien été pris en compte";
     header('Location: ../views/communaute.php');
 }

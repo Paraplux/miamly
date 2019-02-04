@@ -1,9 +1,25 @@
 <?php
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 if(isset($_POST)){
 
     if(empty($_POST['nom'])){
         $_SESSION['toast']['erreur']['nom'] = "Il faut entrer un nom à votre recette!";
+    }
+    
+    if(count($_POST['step']) === 1 && $_POST['step'][0] === ""){
+        $_SESSION['toast']['erreur']['step'] = "Attention, il n'y a aucune étape à votre recette!";
+    }
+
+    if(count($_POST['ing']) === 1 && $_POST['ing'][0] === ""){
+        $_SESSION['toast']['erreur']['ing'] = "Attention, il n'y a aucun ingrédient à votre recette !";
+    }
+
+    if($_FILES['photos']['error'][0] === 4){
+        $_SESSION['toast']['erreur']['photos'] = "Attention, vous n'avez pas ajouté de photo à votre recette !";
     }
 
     if(empty($_SESSION['toast'])) {
@@ -94,7 +110,9 @@ if(isset($_POST)){
         
         /*Messages toast et redirection*/
         $_SESSION['toast']['success']['addrecette'] = 'La recette a bien été ajouté !';
-        header('Location: ../views/account.php');
+        header('Location: ../views/addrecette.php');
+    } else {
+        header('Location: ../views/addrecette.php');
     }
 }
 

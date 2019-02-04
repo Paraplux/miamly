@@ -36,5 +36,4 @@ if (isset($_POST)) {
         $_SESSION['toast']['erreur']['password'] = "Vos champs de connexion sont mal remplis";
         header('Location: ../views/login.php');
     }
-    exit();
 }
