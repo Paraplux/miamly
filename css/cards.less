@@ -71,29 +71,27 @@
 .card-thumb-fav {
     display: none;
     position: absolute;
-    top: 15%;
-    right: 40%;
+    top: 10%;
+    right: 5%;
 
     
     color: rgb(145, 145, 145);
 }
 
-.fav-checkbox {
-    position: absolute;
+.card-thumb-fav.isFav {
+    display: block;
 }
 
-.fav-checkbox-input {
-    display: none;
-}
-
+/*FAV*/
 .fav-checkbox-icon {
     padding: 1rem;
     cursor: pointer;
     user-select: none;
     font-size: 3rem;
+    color: #202020;
 }
 
-.fav-checkbox-input:checked ~ .fav-checkbox-icon {
+.fav-checkbox-icon.isFav {
     color: red;
 }
 

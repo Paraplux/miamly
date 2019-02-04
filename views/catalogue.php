@@ -15,22 +15,37 @@ include '../components/navbar.php';
 ?>
 <link rel="stylesheet/less" href="../css/catalogue.less">
 <link rel="stylesheet/less" href="../css/cards.less">
-
+<!--
+Voir le $_GET
+Si get'search' = affichage des résultats de la recherche
+Si get'search' = pané frit, on affiche la spéciale GROS
+Si get'choix' on regarde le paramètre 
+    Si choix = top alors on affiche les top 10 recettes par nombres de commentaires
+    Si choix = favoris on affiche les recettes mises en favoris par l'utilisateur
+    Si choix = best on affiche les recettes les plus compliquées
+    Si choix = easy on affiche les recettes les plus faciles
+    Si choix = rapide on affiche les recettes rapides
+-->
 <div class="catalogue">
     <?php
     include '../models/model-catalogue.php';
     foreach ($recettes as $recette) :
+    if(!$fav || !in_array($recette['r_id'], $fav)) {
+        $isFav = "";
+    } else {
+        $isFav = 'isFav';
+    }
     ?>
         <a href="./recette?r=<?= $recette['r_id'] ?>">
             <div class="card" type="<?= $recette['r_type']; ?>">
                 <div class="card-thumb">
                     <img src="<?= $recette["p_link"] ?>" alt="test">
-                    <div class="card-thumb-fav">
-                        <label class="fav-checkbox">
-                            <input type="hidden" name="fax" value="False" />
-                            <input class="fav-checkbox-input" name="alarm" value="True" type="checkbox">
-                            <span class="fav-checkbox-icon"><i class="far fa-heart"></i></span>
-                        </label>
+                    <div class="card-thumb-fav <?= $isFav ?>">
+                        <form id="fav-form" action="../actions/action-favoris.php" method="POST">
+                            <input name="current_recette" type="hidden" value="<?= $recette['r_id'] ?>">
+                            <input name="from" type="hidden" value="<?= $_GET['search'] ?>">
+                            <span name="submit-fav" type="submit" id="fav-check" class="fav-checkbox-icon <?= $isFav ?>"><i class="far fa-heart"></i></span>
+                        </form>
                     </div>
                 </div>
                 <div class="card-content">
@@ -59,5 +74,13 @@ include '../components/navbar.php';
     ?>
 </div>
 <!-- /CARDS -->
+
+<script>
+var formFav = document.querySelector('#fav-form')
+document.querySelector('#fav-check').addEventListener('click', function(e) {
+    e.preventDefault()
+    formFav.submit()
+})
+</script>
 
 <?php include "../components/footer.php"; ?>

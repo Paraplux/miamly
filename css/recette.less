@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Homemade+Apple|Indie+Flower|Reenie+Beanie');
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple|Indie+Flower|Reenie+Beanie|Pacifico');
+
+/*-----LESS VARIABLES-----*/
+@light : #FAFAFA;
+@dark: #404040;
+@blue-1 : #00C8F8;
+@blue-2 : #59C4C5;
+@yellow-1 : #FFC33C;
+@yellow-2 : #FBE2B4;
+@red : #FF4C65;
+
 
 /*DISPOSITION DE LA PAGE*/
 
@@ -6,6 +16,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .side-content {
@@ -29,39 +40,49 @@
     padding: 2%;
 }
 
-/*MAIN CONTENT*/
-.main-gallery {
-    width: 60%;
-    margin: 50px 20%;
+.main-content-step {
+    margin-top: 4rem;
+    text-align: justify;
+
+    li {
+        padding: 10px;
+    }
 }
 
-.gallery-cell {
-    width: 100%;
-    img {
-        width: 100%;
-        height: 100%;
-    }
+/*MAIN CONTENT*/
+.main-content-thumbs {
+    margin: auto;
+    width: calc(640rem/20);
+    height: calc(480rem/20);
+}
+.content-thumb {
+    width: 80%;
+    height: 80%;
+    margin: 10%;
+    box-shadow: 0 0 12px #20202080;
+    border-radius: 5px;
+    border: 5px solid white;
 }
 
 .main-content-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .main-content-title {
+        font-family: 'Pacifico', sans-serif;
+    }
 }
 
     /*FAV*/
-    .fav-checkbox-input {
-        display: none;
-    }
-
     .fav-checkbox-icon {
         padding: 1rem;
         cursor: pointer;
         user-select: none;
         font-size: 3rem;
+        color: @dark;
     }
-
-    .fav-checkbox-input:checked~.fav-checkbox-icon {
+    .fav-checkbox-icon.isFav {
         color: red;
     }
 
@@ -78,6 +99,15 @@
 .comment-pseudo {
     margin-left: 10%;
     line-height: 75px;
+    font-size: 1.2rem;
+
+    a {
+        color: inherit;
+    }
+}
+
+.comment-user {
+    color: darken(@yellow-1, 15%);
 }
 
 .comment-corpus {

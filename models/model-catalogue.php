@@ -27,4 +27,14 @@ $req->closeCursor();
 if(!$recettes) {
     echo '<script> window.location.href = "../views/home"</script>';
 }
+
+//Gestion favoris
+    $req = $pdo->prepare('SELECT u_fav FROM mly_utilisateurs WHERE u_id = :logged_id');
+    $req->execute(array(
+        ':logged_id' => $_SESSION['utilisateur']['u_id']
+    ));
+    $d = $req->fetch();
+
+    $fav = explode(',' , $d['u_fav']);
+    
 ?>
