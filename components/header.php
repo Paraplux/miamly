@@ -25,6 +25,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="../css/carousel.css">
     <!-- DEV MODE -->
     <link rel="stylesheet/less" href="../css/less/app.less">
+    <link rel="stylesheet/less" href="../css/less/navbar.less">
 </head>
 <body>
 

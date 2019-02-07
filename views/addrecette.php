@@ -5,9 +5,11 @@ if (session_status() == PHP_SESSION_NONE) {
 
 include '../components/header.php';
 include '../components/navbar.php';
-
-
 ?>
+
+<link rel="stylesheet/less" href="../css/less/form.less">
+<link rel="stylesheet/less" href="../css/less/addrecette.less">
+
 <div class="add-recette">
     <form class="mly-form" action="../actions/action-addrecette.php" method="POST" enctype="multipart/form-data">
         <h2>Proposer une recette</h2>

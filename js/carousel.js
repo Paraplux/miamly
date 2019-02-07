@@ -365,7 +365,4 @@ class Carousel {
     get carouselWidth () {
         return this.root.offsetWidth
     }
-}
-
-
-
+} 

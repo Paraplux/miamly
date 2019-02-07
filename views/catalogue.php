@@ -16,9 +16,10 @@ include '../components/navbar.php';
 if(isset($_GET['search'])) {
 
     require '../models/model-search.php';
-    
+    $searchFor = $_GET['search'];
 } else if (isset($_GET['choix'])) {
     
+    $searchFor = "";
     require '../models/model-choix.php';
 
 } else {
@@ -27,24 +28,14 @@ if(isset($_GET['search'])) {
 ?>
 <link rel="stylesheet/less" href="../css/less/catalogue.less">
 <link rel="stylesheet/less" href="../css/less/cards.less">
-<!--
-Voir le $_GET
-Si get'search' = affichage des résultats de la recherche
-Si get'search' = pané frit, on affiche la spéciale GROS
-Si get'choix' on regarde le paramètre 
-    Si choix = top alors on affiche les top 10 recettes par nombres de commentaires
-    Si choix = favoris on affiche les recettes mises en favoris par l'utilisateur
-    Si choix = best on affiche les recettes les plus compliquées
-    Si choix = easy on affiche les recettes les plus faciles
-    Si choix = rapide on affiche les recettes rapides
--->
+
 <div class="catalogue">
     <?php
     if(!$recettes) {
     echo '<br>';
     echo "<h3 class='catalogue-titre'>Votre recherche n'a donné aucun résultat </h3>";
     } else {
-        echo "<h3 class='catalogue-titre'>$titre </h3>";
+        echo "<h3 class='catalogue-titre'>$titre $searchFor</h3>";
     }
     foreach ($recettes as $recette) :
     if(!$fav || !in_array($recette['r_id'], $fav)) {

@@ -10,6 +10,9 @@ include '../components/header.php';
 include '../components/navbar.php';
 ?>
 
+<link rel="stylesheet/less" href="../css/less/ajouts.less">
+<link rel="stylesheet/less" href="../css/less/cards.less">
+
 <h3 class="ajouts-titre">Jetez un oeil aux derniers ajouts : </h3>
 <div class="ajouts">
     <?php

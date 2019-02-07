@@ -69,17 +69,18 @@ if(!$data) {
     }
 
     //Gestion favoris
-    $req = $pdo->prepare('SELECT u_fav FROM mly_utilisateurs WHERE u_id = :logged_id');
-    $req->execute(array(
-        ':logged_id' => $_SESSION['utilisateur']['u_id']
-    ));
-    $d = $req->fetch();
-
-    $fav = explode(',' , $d['u_fav']);
-    if(!$fav || !in_array($idRecette, $fav)) {
-        $isFav = "";
-    } else {
-        $isFav = 'isFav';
+    if(isset($_SESSION['utilisateur'])) {
+        $req = $pdo->prepare('SELECT u_fav FROM mly_utilisateurs WHERE u_id = :logged_id');
+        $req->execute(array(
+            ':logged_id' => $_SESSION['utilisateur']['u_id']
+        ));
+        $d = $req->fetch();
+        $fav = explode(',' , $d['u_fav']);
+        if(!$fav || !in_array($idRecette, $fav)) {
+            $isFav = "";
+        } else {
+            $isFav = 'isFav';
+        }
     }
 }
 

@@ -11,6 +11,7 @@ include '../components/navbar.php';
 include '../models/model-recette.php';
 ?>
 
+<link rel="stylesheet/less" href="../css/less/recette.less">
 
 <div class="container">
     <?php if(!$data) : ?>
@@ -72,12 +73,17 @@ include '../models/model-recette.php';
             <?php endforeach; ?>
         </div>
         <br><br>
+        <?php if(isset($_SESSION['utilisateur'])) : ?>
         <form class="comment-form" action="../actions/action-addcomment.php" method='POST'>
             <h2 class="comment-subtitle">Ajouter un commentaire : </h2>
             <textarea name="commentaire" cols='60' rows='10' placeholder="Avez vous une remarque, une astuce, un commentaire ?"></textarea><br>
             <input name="current_recette" type="hidden" value="<?= $data['r_id'] ?>">
             <input name="submit" type="submit">
         </form>
+        <?php else : ?>
+        <h2 class="comment-subtitle">Vous devez être connecté pour commenter une recette.</h2>
+        <a href="./login">Connectez vous</a> ou <a href="./sign">Inscrivez vous</a>
+        <?php endif; ?>
     </div>
 
     <div class="side-content">

@@ -9,7 +9,9 @@ include '../components/navbar.php';
 include '../models/model-communaute.php';
 ?>
 <!-- CSS DE LA PAGE -->
-
+<link rel="stylesheet/less" href="../css/less/communaute.less">
+<link rel="stylesheet/less" href="../css/less/large-cards.less">
+<link rel="stylesheet/less" href="../css/less/scroll.less">
 <!-- JS DE DE LA PAGE -->
 <script src="../js/scroll.js"></script>
 <script src="../js/carousel.js" async></script>

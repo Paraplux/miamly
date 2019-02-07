@@ -5,9 +5,10 @@ if (session_status() == PHP_SESSION_NONE) {
 
 include '../components/header.php';
 include '../components/navbar.php';
-
-
 ?>
+
+<link rel="stylesheet/less" href="../css/less/form.less">
+<link rel="stylesheet/less" href="../css/less/account.less">
 
 <div class="account">
     <div class="informations">
@@ -59,7 +60,6 @@ include '../components/navbar.php';
             <input type="submit" value="Modifier"><br>
 
         </form>
-        <a href="./logout.php">Se déconnecter</a>
     </div>
     <div class="changepassword">
         <h2>Modifier votre mot de passe</h2>
